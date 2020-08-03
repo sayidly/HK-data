@@ -1,8 +1,7 @@
 const path = require("path");
 const webpack = require("webpack");
 const HtmlWebpackPlugin = require('html-webpack-plugin'); // 引入HtmlWebpackPlugin插件
-const { CleanWebpackPlugin } = require('clean-webpack-plugin'); // 引入CleanWebpackPlugin插件
-
+const { CleanWebpackPlugin } = require('clean-webpack-plugin') // 引入CleanWebpackPlugin插件
 
 module.exports = {
   entry: "./src/index.js",
@@ -26,22 +25,33 @@ module.exports = {
       {
         test: /\.(png|jpe?g|gif)$/i,
         use: [
-          { loader: 'file-loader', },
+          //{ loader: 'file-loader' },
+          { 
+            loader: 'url-loader', 
+            options: {
+              limit: 1000,
+              outputPath: 'images',
+            }
+          }
         ],
       }
     ]
   },
   resolve: { extensions: ["*", ".js", ".jsx"] },
   output: {
-    path: path.resolve(__dirname, "dist/"),
+    path: path.resolve(__dirname, "/dist"),
     publicPath: "/dist/",
     filename: "bundle.js"
   },
   devServer: {
-    contentBase: path.join(__dirname, "dist/"),
+    contentBase: path.join(__dirname, "dist"),
+    hot: true,
     port: 3000,
+    inline: true,
+    open: true,
+    overlay: true,
     publicPath: "http://localhost:3000/dist/",
-    hotOnly: true
+    //hotOnly: true
   },
   plugins: [
     new webpack.BannerPlugin('版权所有，翻版必究'),
