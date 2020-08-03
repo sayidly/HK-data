@@ -39,7 +39,7 @@ module.exports = {
   },
   resolve: { extensions: ["*", ".js", ".jsx"] },
   output: {
-    path: path.resolve(__dirname, "/dist"),
+    path: path.resolve(__dirname, "dist/"),
     publicPath: "/dist/",
     filename: "bundle.js"
   },
@@ -53,6 +53,7 @@ module.exports = {
     publicPath: "http://localhost:3000/dist/",
     //hotOnly: true
   },
+  devtool: 'source-map'
   plugins: [
     new webpack.BannerPlugin('版权所有，翻版必究'),
     new HtmlWebpackPlugin({
