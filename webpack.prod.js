@@ -7,7 +7,6 @@ const PurifyCssWebpack = require('purifycss-webpack'); // 引入PurifyCssWebpack
 const glob = require('glob');  // 引入glob模块,用于扫描全部html文件中所引用的css
 
 module.exports = merge(common, { // 将webpack.common.js合并到当前文件
-    mode: "production",
     devtool: 'source-map',  // 会生成对于调试的完整的.map文件，但同时也会减慢打包速度
     plugins: [
       new CleanWebpackPlugin(),  
