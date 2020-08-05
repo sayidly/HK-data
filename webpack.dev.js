@@ -11,7 +11,6 @@ module.exports = merge(common, {   // 将webpack.common.js合并到当前文件
       inline: true,
       open: true,
       overlay: true,
-      publicPath: "http://localhost:8080/dist/",
     },
 })
 

@@ -1,8 +1,9 @@
 import {hot} from "react-hot-loader";
 import React, { Component} from "react";
 import "./App.scss";
-import Table from './components/Table'
-import Form from './components/Form'
+import Table from './components/Table';
+import Form from './components/Form';
+import Clock from './components/Clock';
 
 class App extends Component {
   state = {
@@ -29,6 +30,7 @@ class App extends Component {
     return(
       <div className="container">
         <h1> Hello, World!</h1>
+        <Clock />
         <Table characterData={characters} removeCharacter={this.removeCharacter} />
         <Form handleSubmit={this.handleSubmit} />
       </div>
