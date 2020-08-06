@@ -14,16 +14,16 @@
   height: 100%;
 }
 
-// .section {
-//   padding: 0 70px;
-//   margin: 12.5% 0;
-//   position: relative;
-//   box-sizing: border-box;
-//   @include media($media-mobile...) {
-//     padding: 25px;
-//     margin: 40px 0;
-//   }
-// }
+.section {
+  padding: 0 70px;
+  margin: 12.5% 0;
+  position: relative;
+  box-sizing: border-box;
+  @include media(">phone", "<=tablet") {
+    padding: 25px;
+    margin: 40px 0;
+  }
+}
 
 // mark {
 //   display: inline-block;
@@ -64,23 +64,23 @@
 //   }
 // }
 
-// .logo {
-//   width: 50px;
-//   height: 50px;
-//   position: absolute;
-//   right: 40px;
-//   top: 30px;
-//   display: block;
-//   img {
-//     width: 100%;
-//   }
-//   @include media($media-mobile...) {
-//     width: 40px;
-//     height: 40px;
-//     right: 25px;
-//     top: 25px;
-//   }
-// }
+.logo {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  left: 40px;
+  top: 30px;
+  display: block;
+  img {
+    width: 100%;
+  }
+  @include media(">phone", "<=tablet") {
+    width: 40px;
+    height: 40px;
+    right: 25px;
+    top: 25px;
+  }
+}
 
 // a {
 //   color: #fff;
