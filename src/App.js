@@ -2,15 +2,11 @@ import {hot} from "react-hot-loader";
 // import React, { Component } from "react";
 import React, { useRef, useEffect } from 'react';
 import "./App.scss";
-import Cover from './Components/Cover';
+import Cover from './components/Cover';
 
 const App = () => {
-  const scrollInto = useRef(null)
-  useEffect(() => {
-  });
-
   return (
-    <div className="App" ref={scrollInto}>
+    <div className="App">
       <Cover />
     </div>
   );
