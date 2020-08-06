@@ -2,6 +2,7 @@
 const path = require('path');
 const webpack = require('webpack');  // 这个插件不需要安装，是基于webpack的，需要引入webpack模块
 const HtmlWebpackPlugin = require('html-webpack-plugin'); // 引入HtmlWebpackPlugin插件
+const MiniCssExtractPlugin = require("mini-css-extract-plugin"); //引入分离插件
 
 module.exports = {
   entry: path.join(__dirname, "./src/index.js"), // 入口文件
@@ -19,11 +20,20 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader']
+        use: [MiniCssExtractPlugin.loader, 'css-loader?sourceMap']
       },
       {
         test: /\.(scss|sass)$/,
-        use: ['style-loader', 'css-loader', 'sass-loader']
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              hmr: process.env.NODE_ENV === 'development',
+            },
+          },
+          'css-loader?sourceMap',
+          'sass-loader?sourceMap',
+        ],
       },
       {
         test: /\.(png|jpe?g|gif)$/i,
@@ -46,7 +56,10 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: path.join(__dirname, "/src/index.html")// new一个这个插件的实例，并传入相关的参数
     }),
-    new webpack.HotModuleReplacementPlugin(), // 热更新插件 
+    new webpack.HotModuleReplacementPlugin(), // 热更新插件
+    new MiniCssExtractPlugin({
+      filename: '[name].css',
+    })
   ]
 }
 
