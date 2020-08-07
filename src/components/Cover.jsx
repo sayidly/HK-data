@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import './Cover.scss'
-// import { gsap, TweenLite } from 'gsap';
-// import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { gsap, TweenLite } from 'gsap';
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 // import * as d3 from 'd3';
 import bgImage from '../images/cover.png';
 import logo from '../images/logo.svg'
@@ -9,14 +9,37 @@ import logo from '../images/logo.svg'
 const Cover = () => {
   const cover = React.createRef();
   const bg = React.createRef();
+  const text = React.createRef();
 
-  useEffect(() => {});
+  useEffect(() => {
+    gsap.timeline({scrollTrigger:{
+      trigger: cover.current,
+      scrub: true,
+      pin: true,
+      start: "top top",
+      end: "+=100%",
+      invalidateOnRefresh: true
+    }})
+    .from(bg.current, {opacity: 0, ease: "none"})
+    .to(bg.current, {opacity: 1, ease: "none"})
+
+    gsap.timeline({scrollTrigger:{
+      trigger: text.current,
+      scrub: true,
+      pin: true,
+      start: "top top",
+      end: "+=100%"
+    }})
+    .from(text.current, {opacity: 0, ease: "none"})
+    .to(text.current, {opacity: 1, ease: "none"})
+
+  });
 
   return (
     <>
-      <div className="cover">
+      <div className="cover" ref={cover}>
         <img src={bgImage} className="cover__bg" alt="bg"/>
-        <div className="cover__text">
+        <div className="cover__text" ref={text}>
           <h1 className="cover__text__subtitle">● 獨家數據</h1>
           <h1 className="cover__text__title">「香港人」、「本土派」怎麼看攬炒、獨立、香港未來</h1>
           <p className="cover__text__content">第一次吸入催淚煙，是許多香港市民在2019年共同的經歷。第一次體驗無法呼吸、眼淚披面、癱坐在地，學習被濃煙嗆到時要放慢呼吸，抑或學習在一片混亂中，幫身旁陌生人的眼睛滴上生理鹽水。</p>
