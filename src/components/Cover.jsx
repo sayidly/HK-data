@@ -7,6 +7,11 @@ import bgImage from '../images/cover.png';
 import logo from '../images/logo.svg'
 
 const Cover = () => {
+  const cover = React.createRef();
+  const bg = React.createRef();
+
+  useEffect(() => {});
+
   return (
     <>
       <div className="cover">

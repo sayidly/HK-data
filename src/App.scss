@@ -73,6 +73,7 @@
   display: block;
   img {
     width: 100%;
+    pointer-events: none;
   }
   @include media(">phone", "<=tablet") {
     width: 40px;
