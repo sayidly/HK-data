@@ -1,12 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700;900&display=swap');
 
 // Vendor
 @import './styles/include-media';
+@import './styles/variables';
 
 .App, body, html {
   height: 100%;
-  background-color: #222;
-  color: #fff;
+  background-color: $light-grey;
+  color: $black;
   font-family: "Helvetica Neue", "Helvetica", 'Noto Sans TC', "PingFang SC", "Lantinghei SC", "Arial", sans-serif;
 }
 
