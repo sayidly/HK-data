@@ -18,7 +18,6 @@ const Cover = () => {
   const text = React.createRef();
   const scrollContainer = React.createRef();
   const icon = React.createRef();
-  const logo1 = React.createRef();
 
   useEffect(() => {
 
@@ -46,7 +45,6 @@ const Cover = () => {
       start: "top center",
       end: "+=100%"
     }})
-    .to(icon.current, {opacity: 0, duration: .1})
     .to(scrollContainer.current, {y: containerHeight-eleHeight-40})
 
   });
@@ -54,7 +52,7 @@ const Cover = () => {
   return (
     <>
       <div className="cover" ref={cover}>
-      <a className="logo" href="https://theinitium.com/" target="_blank" ref={logo1}><img src={logo} alt="Initium Logo"/></a>
+      <a className="logo" href="https://theinitium.com/" target="_blank"><img src={logo} alt="Initium Logo"/></a>
         <img src={bgImage} className="cover__bg" alt="bg"/>
         <div className="cover__text" ref={text}>
           <div className="cover__title">
@@ -69,14 +67,7 @@ const Cover = () => {
             </div>
           </div>
           <div className="cover__control">
-            <div className="cover__control__dropdown_icon" ref={icon}><img src={scrollIcon} alt=""/></div>
-            {/* <Popup
-              trigger={<div className="cover__control__info_icon"><img src={infoIcon} alt=""/></div>}
-              modal
-              closeOnDocumentClick
-            >
-              <span> Modal content </span>
-            </Popup> */}
+            <div className="cover__control__dropdown_icon bounce" ref={icon}><img src={scrollIcon} alt=""/></div>
             <Modal trigger={<div className="cover__control__info_icon"><img src={infoIcon} alt=""/></div>}/>
           </div>
         </div>
