@@ -3,10 +3,10 @@ import * as d3 from "d3";
 import './BarChartA.scss';
 
 const sampleData = [
-  { label: '香港人', value: 635 },
-  { label: '混合身份', value: 635 },
-  { label: '中國人', value: 635 },
-  { label: '無答案', value: 635 }
+  { label: '香港人', value: .567 },
+  { label: '混合身份', value: .32 },
+  { label: '中國人', value: .101 },
+  { label: '無答案', value: .012 }
 ]
 
 function groupData (data, total) {
@@ -26,7 +26,6 @@ function groupData (data, total) {
   }).filter(d => d.value > 0)
   return _data
 }
-
 
 function stackedBar (bind, data, config) {
   config = {

@@ -32,20 +32,19 @@ const Bar001 = (props) =>{
     <TagButton className="bar001__header__buttons__button" key={key} order={p.order} />
   )
 
-
-    return(
-      <div className="chart bars bar001">
-        <div className="chart__container">
-            <div className="chart__header">
-              <h2 className="chart__header__text__title"> Hello, World!</h2>
-              <div className="chart__header__buttons">
-                {buttonGroup}
-              </div>
+  return(
+    <div className="chart bars bar001">
+      <div className="chart__container">
+          <div className="chart__header">
+            <h2 className="chart__header__text__title">{props.title}</h2>
+            <div className="chart__header__buttons">
+              {buttonGroup}
             </div>
-            <Bar data={barData} barIndex={`001`}/>
           </div>
-      </div>
-    );
+          <Bar data={barData} barIndex={`001`}/>
+        </div>
+    </div>
+  );
 
 }
 

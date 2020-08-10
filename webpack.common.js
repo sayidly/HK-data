@@ -51,6 +51,8 @@ module.exports = {
           {
             loader: 'url-loader',
             options: {
+              name: "[path][name].[ext]",
+              emitFile: true,
               outputPath: 'libs',
             }
           }
