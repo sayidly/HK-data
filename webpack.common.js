@@ -44,6 +44,18 @@ module.exports = {
             }
           }
         ],
+      },
+      {
+        test: /\.(csv)$/i,
+        use: [
+          //{ loader: 'file-loader' },
+          {
+            loader: 'url-loader',
+            options: {
+              outputPath: 'libs',
+            }
+          }
+        ],
       }
     ]
   },
