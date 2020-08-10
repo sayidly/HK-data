@@ -51,8 +51,8 @@ module.exports = {
           {
             loader: 'url-loader',
             options: {
-              name: "[path][name].[ext]",
-              emitFile: true,
+              // name: "[path][name].[ext]",
+              limit: 1000,
               outputPath: 'libs',
             }
           }

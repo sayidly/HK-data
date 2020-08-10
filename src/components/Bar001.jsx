@@ -8,13 +8,13 @@ import './Bar.scss';
 import barSample0 from "../libs/barSample0.csv";
 import Bar from "./charts/Bar";
 
-const Bar001 = (props) =>{
+const Bar001 = () =>{
 
   const [barData, setBarData] = useState([]);
 
   function TagButton(props){
       return(
-          <button onClick={() => csv(`./data/barSample${props.order}.csv`).then(setBarData)}>{`Button${props.order}`}</button>
+          <button onClick={() => csv(`../libs/barSample${props.order}.csv`).then(setBarData)}>{`Button${props.order}`}</button>
       )
   };
 
@@ -36,7 +36,7 @@ const Bar001 = (props) =>{
     <div className="chart bars bar001">
       <div className="chart__container">
           <div className="chart__header">
-            <h2 className="chart__header__text__title">{props.title}</h2>
+            <h2 className="chart__header__text__title"> Hello, World!</h2>
             <div className="chart__header__buttons">
               {buttonGroup}
             </div>

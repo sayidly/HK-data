@@ -32,11 +32,12 @@ function stackedBar (bind, data, config) {
     f: d3.format('.1f'),
     margin: {top: 20, right: 0, bottom: 20, left: 0},
     width: 800,
-    height: 200,
-    barHeight: 100,
-    color: '#C41F1F',
+    height: 600,
+    barHeight: 400,
+    color: ["#FFB600", "#09D168", "#2B50D6", "#000"],
     ...config
   }
+
   const { f, margin, width, height, barHeight, color } = config
   const w = width - margin.left - margin.right
   const h = height - margin.top - margin.bottom
@@ -63,7 +64,7 @@ function stackedBar (bind, data, config) {
     .attr('y', h / 2 - halfBarHeight)
     .attr('height', barHeight)
     .attr('width', d => xScale(d.value)*0.97)
-    .style('fill', (d, i) => color)
+    .style('fill', (d, i) => color[i])
 
   selection.selectAll('.text-label')
     .data(_data)
@@ -78,10 +79,6 @@ function stackedBar (bind, data, config) {
 }
 
 const BarChartA = (props) => {
-  const piechart = React.createRef();
-  const button1 = React.createRef();
-  const button2 = React.createRef();
-  const linechart = React.createRef();
 
   useEffect(() => {
     stackedBar('.chart', sampleData)

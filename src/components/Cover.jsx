@@ -7,7 +7,6 @@ import bgImage from '../images/cover.png';
 import logo from '../images/logo.svg';
 import scrollIcon from '../images/scrolldown.svg';
 import infoIcon from '../images/info.svg';
-import Popup from "reactjs-popup";
 import Modal from './Modal';
 
 gsap.registerPlugin(ScrollTrigger);
