@@ -33,7 +33,7 @@ function stackedBar (bind, data, config) {
     margin: {top: 20, right: 0, bottom: 20, left: 0},
     width: 800,
     height: 600,
-    barHeight: 400,
+    barHeight: 500,
     color: ["#FFB600", "#09D168", "#2B50D6", "#000"],
     ...config
   }
@@ -66,16 +66,31 @@ function stackedBar (bind, data, config) {
     .attr('width', d => xScale(d.value)*0.97)
     .style('fill', (d, i) => color[i])
 
+  // Add one dot in the legend for each name.
+  var size = 20
+  selection.selectAll("mydots")
+    .data(_data)
+    .enter().append("rect")
+      .attr("x", (d,i) => { return i*(size+80)})
+      .attr("y", - margin.top) // 100 is where the first dot appears. 25 is the distance between dots
+      .attr("width", size)
+      .attr("height", size)
+      .style("fill", (d, i) => color[i])
+
+  // Add one label in the legend for each name.
   selection.selectAll('.text-label')
     .data(_data)
     .enter().append('text')
     .attr('class', 'text-label')
-    .attr('text-anchor', 'middle')
-    .attr('x', d => xScale(d.cumulative) + (xScale(d.value) / 2))
-    .attr('y', (h / 2) + (halfBarHeight * 1.1) + 25)
-    .style('fill', (d, i) => '#fff')
+    // .attr('text-anchor', 'middle')
+    // .attr('x', d => xScale(d.cumulative) + (xScale(d.value) / 2))
+    // .attr('y', (h / 2) + (halfBarHeight * 1.1) + 25)
+    .attr("x", (d,i) => { return size*1.5 + i*(size+80)})
+    .attr("y", size*.75- margin.top)
+    .style('fill', (d, i) => color[i])
     .style('font-size', '14px')
     .text(d => d.label)
+
 }
 
 const BarChartA = (props) => {
