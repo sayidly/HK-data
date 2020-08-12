@@ -10,14 +10,7 @@ const sampleData = [
   { label: '無答案', value: .012 }
 ]
 
-const sampleData2 = [
-{ label: '火星人', value: .40 },
-{ label: '金星人', value: .20 },
-{ label: '太阳人', value: .10 },
-{ label: '地球人', value: .30 }
-]
-
-const BarChar01 = (props) => {
+const BarChartA = (props) => {
 
   const [barData, setBarData] = useState([]);
 
@@ -33,4 +26,4 @@ const BarChar01 = (props) => {
   );
 }
 
-export default BarChar01;
+export default BarChartA;
