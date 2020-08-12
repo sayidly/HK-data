@@ -1,13 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import * as d3 from "d3";
-import './BarChartA.scss';
-
-const sampleData = [
-  { label: '香港人', value: .567 },
-  { label: '混合身份', value: .32 },
-  { label: '中國人', value: .101 },
-  { label: '無答案', value: .012 }
-]
 
 function groupData (data, total) {
   const percent = d3.scaleLinear()
@@ -90,21 +82,17 @@ function stackedBar (bind, data, config) {
     .style('fill', (d, i) => color[i])
     .style('font-size', '14px')
     .text(d => d.label)
-
 }
 
-const BarChartA = (props) => {
+const Bar01 = (props) => {
 
   useEffect(() => {
-    stackedBar('.chart', sampleData)
+    stackedBar('.graphic', props.data)
   })
 
-  return (
-    <div className="chart section" id="chartA">
-      <h2 className="chart__title">{props.title}</h2>
-      {/* <div className="remark">{props.remark}</div> */}
-    </div>
+  return(
+    <div className="graphic"></div>
   )
 }
 
-export default BarChartA;
+export default Bar01;

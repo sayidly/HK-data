@@ -38,7 +38,6 @@ function Bar({ data, barIndex }){
       let stackedData, subgroup, group;
 
       if (data.length){
-          console.log("yesss");
           group = data.map(d => d[`${data.columns[0]}`]);
           subgroup = data.columns.slice(1);
           stackedData = d3.stack().keys(subgroup)(data);

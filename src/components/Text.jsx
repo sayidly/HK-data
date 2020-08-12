@@ -6,7 +6,6 @@ const Text = (props) => {
     <div className="text section">
       <div className={ "text__" + props.type }>
         { props.text }
-        {/* { props.text[1] } */}
       </div>
     </div>
   )

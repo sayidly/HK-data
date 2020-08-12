@@ -1,8 +1,7 @@
-import React, { useEffect } from 'react';
+import React, { useRef, createRef, useEffect } from 'react';
 import './Cover.scss'
 import { gsap, TweenLite } from 'gsap';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-// import * as d3 from 'd3';
 import bgImage from '../images/cover.png';
 import logo from '../images/logo.svg';
 import scrollIcon from '../images/scrolldown.svg';

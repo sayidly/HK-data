@@ -6,7 +6,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import './Chart.scss';
 import './Bar.scss';
 import barSample0 from "../libs/barSample0.csv";
-import Bar from "./charts/Bar";
+import Bar from "./Bar";
 
 const Bar001 = () =>{
 
