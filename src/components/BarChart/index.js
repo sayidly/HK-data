@@ -1,51 +1,49 @@
 import React, { useState } from 'react'
+import Graph from './Graph'
 
-function Test (props) {
-  const items = props.items.map((item) =>
-    <li>{item}</li>
-  )
+import './index.scss'
+
+function Chart (props) {
+  const { curTag } = props
   return (
-    <ul>{items}</ul>
+    <div className="chart">
+      {curTag.data.map((item, index) =>
+        <div className="chart-item" key={index}>
+          <div className="title">{item.title}</div>
+          <Graph values={item.values} labels={curTag.labels}/>
+        </div>
+      )}
+    </div>
   )
 }
 
 function BarChart (props) {
   const [curTagIndex, setCurTagIndex] = useState(0)
 
+  const curTag = props.data.tags[curTagIndex]
+
   const tags = (
     <div>
       {props.data.tags.map((tag, index) => 
-        <span key={tag.name} onClick={() => setCurTagIndex(index)}>{tag.name}</span>
+        <span key={tag.name} onClick={() => setCurTagIndex(index)}>#{tag.name}</span>
       )}
     </div>
   )
 
   const labels = (
     <div>
-      {props.data.tags[curTagIndex].labels.map((label) =>
-        <span>{label.name}</span>
-      )}
-    </div>
-  )
-
-
-  const chart = (
-    <div>
-      {props.data.tags[curTagIndex].data.map((item) =>
-        <div>
-          <div className="title">{item.title}</div>
-          <Test items={item.values} />
-        </div>
+      {curTag.labels.map((label, index) =>
+        <span key={index}>{label.name}</span>
       )}
     </div>
   )
 
   return (
-    <div>
+    <div className="bar-chart">
       <h1>{props.data.title}</h1>
       {tags}
       {labels}
-      {chart}
+      <Chart curTag={curTag}/>
     </div>
   )
 }
