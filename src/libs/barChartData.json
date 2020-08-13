@@ -4,77 +4,56 @@
     "tags": [
       {
         "name": "整体",
+        "labels": [
+          {
+            "name": "香港人",
+            "color": "#FF0000"
+          },
+          {
+            "name": "混合身份",
+            "color": "#FFF000"
+          },
+          {
+            "name": "中国人",
+            "color": "#FF00FF"
+          },
+          {
+            "name": "无答案",
+            "color": "#FF0000"
+          }
+        ],
         "data": [
           {
             "title": "整体",
-            "labels": [
-              {
-                "name": "香港人",
-                "color": "#FF0000",
-                "value": "0.2"
-              },
-              {
-                "name": "混合身份",
-                "color": "#FFF000",
-                "value": "0.2"
-              },
-              {
-                "name": "中国人",
-                "color": "#FF00FF",
-                "value": "0.2"
-              },
-              {
-                "name": "无答案",
-                "color": "#FF0000",
-                "value": "0.2"
-              }
-            ]
+            "values": [0.2, 0.3, 0.4, 0.1]
           }
         ]
       },
       {
         "name": "年龄",
+        "labels": [
+          {
+            "name": "香港人",
+            "color": "#FF0000"
+          },
+          {
+            "name": "混合身份",
+            "color": "#FFF000"
+          },
+          {
+            "name": "中国人",
+            "color": "#FF00FF"
+          }
+        ],
         "data": [
           {
             "title": "15-29岁",
-            "labels": [
-              {
-                "name": "香港人",
-                "color": "#FF0000",
-                "value": "0.2"
-              },
-              {
-                "name": "混合身份",
-                "color": "#FFF000",
-                "value": "0.2"
-              },
-              {
-                "name": "中国人",
-                "color": "#FF00FF",
-                "value": "0.2"
-              }
-            ]
+            "values": [0.2, 0.3, 0.4]
           },
           {
             "title": "30-49岁",
-            "labels": [
-              {
-                "name": "香港人",
-                "color": "#FF0000",
-                "value": "0.2"
-              },
-              {
-                "name": "混合身份",
-                "color": "#FFF000",
-                "value": "0.2"
-              },
-              {
-                "name": "中国人",
-                "color": "#FF00FF",
-                "value": "0.2"
-              }
-            ]
-          },
+            "values": [0.2, 0.3, 0.4]
+          }
         ]
       }
     ]
