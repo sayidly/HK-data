@@ -8,7 +8,8 @@ import BarChartA from './components/BarChartA';
 import Question from './components/Question';
 import BarChart from './components/BarChart'
 import {
-  identity
+  identity,
+  politics
 } from './libs/barChartData.json'
 console.log(identity)
 
@@ -21,6 +22,7 @@ const App = () => {
       <BarChartA title="群眾輪廓：身分認同" />
       <Question text={["民主到底是什麼？"], ["港獨現實嗎？"], ["港獨能被公開討論嗎？"]} />
       <BarChart data={identity}/>
+      <BarChart data={politics}/>
     </div>
   );
 }

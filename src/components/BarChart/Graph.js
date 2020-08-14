@@ -13,7 +13,7 @@ function Graph (props) {
         className="graph-item" 
         key={index}
         style={style}
-      >{value}
+      >
       </div>
     )
   }
