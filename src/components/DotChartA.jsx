@@ -4,26 +4,84 @@ import './Chart.scss'
 import './DotChartA.scss'
 import DotA from "./charts/DotA";
 
+const dotData1 = [
+  {"身份": "香港人", "民主意涵":"立法機關可對政府進行監察", "number": 0.633},
+  {"身份": "香港人", "民主意涵": "政府為市民提供基本必需品", "number": 0.035},
+  {"身份": "香港人", "民主意涵": "市民可自由組織政治團體", "number": 0.221},
+  {"身份": "香港人", "民主意涵": "政府為市民提供優質公共服務", "number": 0.111},
+  {"身份": "混合身份", "民主意涵": "立法機關可對政府進行監察", "number": 0.385},
+  {"身份": "混合身份", "民主意涵": "政府為市民提供基本必需品", "number": 0.122},
+  {"身份": "混合身份", "民主意涵": "市民可自由組織政治團體", "number": 0.118},
+  {"身份": "混合身份", "民主意涵": "政府為市民提供優質公共服務", "number": 0.375},
+  {"身份": "中國人", "民主意涵": "立法機關可對政府進行監察", "number": 0.182},
+  {"身份": "中國人", "民主意涵": "政府為市民提供基本必需品", "number": 0.286},
+  {"身份": "中國人", "民主意涵": "市民可自由組織政治團體", "number": 0.39},
+  {"身份": "中國人", "民主意涵": "政府為市民提供優質公共服務", "number": 0.494},
+];
+
+const dotData2 = [
+  {"身份": "香港人", "民主意涵":"政府確保法律與社會秩序", "number": 0.164},
+  {"身份": "香港人", "民主意涵": "傳媒可自由批評政府", "number": 0.366},
+  {"身份": "香港人", "民主意涵": "政府確保所有人都有工作機會", "number": 0.054},
+  {"身份": "香港人", "民主意涵": "各個政黨於選舉中能夠公平競爭", "number": 0.416},
+  {"身份": "混合身份", "民主意涵": "政府確保法律與社會秩序", "number": 0.301},
+  {"身份": "混合身份", "民主意涵": "傳媒可自由批評政府", "number": 0.160},
+  {"身份": "混合身份", "民主意涵": "政府確保所有人都有工作機會", "number": 0.190},
+  {"身份": "混合身份", "民主意涵": "各個政黨於選舉中能夠公平競爭", "number": 0.349},
+  {"身份": "中國人", "民主意涵": "政府確保法律與社會秩序", "number": 0.314},
+  {"身份": "中國人", "民主意涵": "傳媒可自由批評政府", "number": 0.064},
+  {"身份": "中國人", "民主意涵": "政府確保所有人都有工作機會", "number": 0.301},
+  {"身份": "中國人", "民主意涵": "各個政黨於選舉中能夠公平競爭", "number": 0.321},
+];
+
+const dotData3 = [
+  {"身份": "香港人", "民主意涵":"市民可自由參與抗議", "number": 0.259},
+  {"身份": "香港人", "民主意涵": "政府廉潔不貪污", "number": 0.085},
+  {"身份": "香港人", "民主意涵": "法院確保市民不受政府濫權侵害", "number": 0.640},
+  {"身份": "香港人", "民主意涵": "政府提供失業補助", "number": 0.017},
+  {"身份": "混合身份", "民主意涵": "市民可自由參與抗議", "number": 0.164},
+  {"身份": "混合身份", "民主意涵": "政府廉潔不貪污", "number": 0.309},
+  {"身份": "混合身份", "民主意涵": "法院確保市民不受政府濫權侵害", "number": 0.393},
+  {"身份": "混合身份", "民主意涵": "政府提供失業補助", "number": 0.134},
+  {"身份": "中國人", "民主意涵": "市民可自由參與抗議", "number": 0.073},
+  {"身份": "中國人", "民主意涵": "政府廉潔不貪污", "number": 0.427},
+  {"身份": "中國人", "民主意涵": "法院確保市民不受政府濫權侵害", "number": 0.200},
+  {"身份": "中國人", "民主意涵": "政府提供失業補助", "number": 0.300},
+];
 
 const DotChartA = () =>{
-  const dotData = [
-    {"身份": "香港人", "類別": "類別1", "number": 0.3},
-    {"身份": "香港人", "類別": "類別2", "number": 0.4},
-    {"身份": "香港人", "類別": "類別3", "number": 0.3},
-    {"身份": "混合", "類別": "類別1", "number": 0.6},
-    {"身份": "混合", "類別": "類別2", "number": 0.1},
-    {"身份": "混合", "類別": "類別3", "number": 0.3},
-    {"身份": "中國人", "類別": "類別1", "number": 0.2},
-    {"身份": "中國人", "類別": "類別2", "number": 0.3},
-    {"身份": "中國人", "類別": "類別3", "number": 0.5},
-  ]
 
+    const dotDataGroup = [dotData1, dotData2, dotData3]
+
+    const [dotData, setDotData] = useState(dotData1)
+
+    function TabButton(props){
+      return(
+          <button onClick={() => setDotData(dotDataGroup[props.order])}>{`Button${props.order}`}</button>
+      )
+    };
+
+    const tabData = [
+      {order: 0},
+      {order: 1},
+      {order: 2}
+    ]
+
+    const buttonGroup = tabData.map((p, key) =>
+      <TabButton className="dot001__header__buttons__button" key={key} order={p.order} />
+    )
 
     return(
-      <div className="dot001">
-        <div className="chart__container">
-            <div className="chart__header">
-              <h2 className="chart__header__text__title"> Hello, World!</h2>
+      <div className="dot001 dotchart">
+        <div className="dotchart__container">
+            <div className="dotchart__header">
+              <div className="dotchart__header__text__title">
+                <span>●</span>
+                <h2>你認為哪一項是最重要的民主特徵？</h2>
+              </div>
+              <div className="dotchart__header__buttons">
+                {buttonGroup}
+              </div>
             </div>
             <DotA data={dotData}/>
           </div>
