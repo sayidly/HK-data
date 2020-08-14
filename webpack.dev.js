@@ -9,9 +9,8 @@ module.exports = merge(common, {   // 将webpack.common.js合并到当前文件
       hot: true,
       port: '8080',
       inline: true,
-      open: true,
+      open: false,
       overlay: true,
-      publicPath: "http://localhost:8080/dist/",
     },
 })
 

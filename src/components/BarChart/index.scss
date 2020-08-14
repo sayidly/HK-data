@@ -1,0 +1,21 @@
+.bar-chart {
+  width: 60vw;
+  margin: 0 auto;
+}
+.chart {
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  .chart-item {
+    flex: 1;
+    margin-bottom: 10px;
+  }
+}
+
+.graph {
+  height: 100%;
+  .graph-item {
+    display: inline-block;
+    height: 100%;
+  }
+}
