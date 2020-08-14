@@ -26,7 +26,7 @@ function BarChart (props) {
 
   const tags = (
     <div className="tags">
-      {props.data.tags.map((tag, index) => 
+      {props.data.tags.map((tag, index) =>
         <span className={`tag ${curTagIndex === index ? 'active' : ''}`} key={tag.name} onClick={() => setCurTagIndex(index)}>#{tag.name}</span>
       )}
     </div>

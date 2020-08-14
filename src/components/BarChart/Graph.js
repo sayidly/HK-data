@@ -10,7 +10,7 @@ function Graph (props) {
     }
     return (
       <div
-        className="graph-item" 
+        className="graph-item"
         key={index}
         style={style}
       >
