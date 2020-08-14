@@ -16,9 +16,9 @@
 }
 
 .section {
-  padding: 0 70px;
-  margin: 12.5% auto;
+  margin: 0 auto;
   max-width: 800px;
+  height: 100vh;
   position: relative;
   box-sizing: border-box;
   @include media(">phone", "<=tablet") {
