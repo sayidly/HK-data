@@ -14,8 +14,8 @@ function LineA({ data }){
             top: 30,
             right: 20,
             bottom: 50,
-            left: 30
-        }
+            left: 50
+        }   
 
         const svg = d3.select(svgRef.current);
 
@@ -42,12 +42,18 @@ function LineA({ data }){
         const xAxis = svg.append("g")
             .attr("class", "x-axis")
             .attr("transform", `translate(${margin.left}, ${boundedHeight + margin.top})`)
-            .call(d3.axisBottom(xScale).ticks(5));
+            .call(d3.axisBottom(xScale).ticks(5).tickSize(0, 0))
+            .selectAll("text") 
+                .attr("y", "22px")
+                .attr("font-size", "16px");
 
         const yAxis = svg.append("g")
             .attr("class", "y-axis")
             .attr("transform", `translate(${margin.left}, ${margin.top})`)
-            .call(d3.axisLeft(yScale).ticks(5));
+            .call(d3.axisLeft(yScale).ticks(5).tickSize(0, 0))
+            .selectAll("text") 
+                .attr("x", "-10px")
+                .attr("font-size", "16px");
 
         const lineGenerator = d3.line()
             .x(d => xScale(+d.x))
