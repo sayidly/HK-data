@@ -1,0 +1,35 @@
+@import '../styles/variables';
+
+.Footer{
+    box-sizing: border-box;
+    height: 40vh;
+    background-color: #282828;
+    width: 98%;
+    margin: 0 auto;
+    &__container{
+        color: $yellow;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 100%;
+        justify-content: center;
+        &__creators{
+            width: 20%;
+            &__text{
+                display: flex;
+                // justify-content: space-between;
+                &__role {
+                    width: 40%;
+                    font-weight: 600;
+                }
+                &__name {
+                    width: 60%;
+                }
+                &__copyright{
+                    text-align: center;
+                    color: #AAAAAA;
+                }
+            }
+        }
+    }
+}
