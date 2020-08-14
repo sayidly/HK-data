@@ -9,7 +9,9 @@ function Chart (props) {
     <div className="chart">
       {curTag.data.map((item, index) =>
         <div className="chart-item" key={index}>
-          <div className="title">{item.title}</div>
+          {curTag.data.length > 1 &&
+            <div className="item-title">{item.title}</div>
+          }
           <Graph values={item.values} labels={curTag.labels}/>
         </div>
       )}
@@ -23,24 +25,42 @@ function BarChart (props) {
   const curTag = props.data.tags[curTagIndex]
 
   const tags = (
-    <div>
+    <div className="tags">
       {props.data.tags.map((tag, index) => 
-        <span key={tag.name} onClick={() => setCurTagIndex(index)}>#{tag.name}</span>
+        <span className={`tag ${curTagIndex === index ? 'active' : ''}`} key={tag.name} onClick={() => setCurTagIndex(index)}>#{tag.name}</span>
       )}
     </div>
   )
 
   const labels = (
-    <div>
-      {curTag.labels.map((label, index) =>
-        <span key={index}>{label.name}</span>
+    <div className="lables">
+      {curTag.labels.map((label, index) => {
+        const itemStyle = {
+          display: 'inline-block',
+          verticalAlign: 'middle',
+          backgroundColor: label.color,
+          marginRight: '5px',
+          width: '18px',
+          height: '18px'
+        }
+        const style = {
+          verticalAlign: 'middle',
+          color: label.color
+        }
+        return (
+          <span className="lable" key={index}>
+            <span style={itemStyle}></span>
+            <span style={style}>{label.name}</span>
+          </span>
+        )
+      }
       )}
     </div>
   )
 
   return (
     <div className="bar-chart">
-      <h1>{props.data.title}</h1>
+      <h1 className="title">{props.data.title}</h1>
       {tags}
       {labels}
       <Chart curTag={curTag}/>
