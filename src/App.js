@@ -4,6 +4,8 @@ import "./App.scss";
 import Cover from './components/Cover';
 import Text from './components/Text';
 import BarChartA from './components/BarChartA';
+import DotChartA from './components/DotChartA';
+import LineChartA from './components/LineChartA';
 // import TestHook from './components/TestHook';
 import Question from './components/Question';
 import BarChart from './components/BarChart'
@@ -21,6 +23,8 @@ const App = () => {
       <BarChartA title="群眾輪廓：身分認同" />
       <Question text={["民主到底是什麼？"], ["港獨現實嗎？"], ["港獨能被公開討論嗎？"]} />
       <BarChart data={identity}/>
+      <DotChartA />
+      <LineChartA />
     </div>
   );
 }
