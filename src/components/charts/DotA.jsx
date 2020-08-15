@@ -14,7 +14,7 @@ function DotA({ data }){
         const margin = {
             top: 30,
             right: 20,
-            bottom: 50,
+            bottom: 100,
             left: 50
         }
 

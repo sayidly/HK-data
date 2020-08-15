@@ -57,27 +57,27 @@ const DotChartA = (props) =>{
 
     function TabButton(props){
       return(
-          <button onClick={() => setDotData(dotDataGroup[props.order])}>{`Button${props.order}`}</button>
+          <button onClick={() => setDotData(dotDataGroup[props.order])}>{`${props.text}`}</button>
       )
     };
 
     const tabData = [
-      {order: 0},
-      {order: 1},
-      {order: 2}
+      {order: 0, text: "# 整體"},
+      {order: 1, text: "# 身份認同"},
+      {order: 2, text: "# 政治傾向"}
     ]
 
     const buttonGroup = tabData.map((p, key) =>
-      <TabButton className="dot001__header__buttons__button" key={key} order={p.order} />
+      <TabButton className="dot001__header__buttons__button" key={key} order={p.order} text={p.text}/>
     )
 
     return(
-      <div className={`dot001 dotchart ${props.snap}`}>
+      <div className={`dot001 dotchart section ${props.snap}`}>
         <div className="dotchart__container">
             <div className="dotchart__header">
               <div className="dotchart__header__text__title">
-                <span>●</span>
-                <h2>你認為哪一項是最重要的民主特徵？</h2>
+                <span></span>
+                <h1>你認為哪一項是最重要的民主特徵？</h1>
               </div>
               <div className="dotchart__header__buttons">
                 {buttonGroup}

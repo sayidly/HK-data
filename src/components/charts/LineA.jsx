@@ -13,8 +13,8 @@ function LineA({ data }){
         const margin = {
             top: 30,
             right: 20,
-            bottom: 50,
-            left: 50
+            bottom: 80,
+            left: 80
         }   
 
         const svg = d3.select(svgRef.current);
@@ -30,6 +30,9 @@ function LineA({ data }){
         
         const boundedWidth = width - margin.left - margin.right,
               boundedHeight = height - margin.top - margin.bottom;
+
+       const xText = Object.keys(data[0])[0],
+            yText = Object.keys(data[0])[1];
 
         const xScale = d3.scaleLinear()
             .domain([1, 5])
@@ -55,13 +58,31 @@ function LineA({ data }){
                 .attr("x", "-10px")
                 .attr("font-size", "16px");
 
+        const xLabel = svg.append("g")
+            .attr("class", "label x-label")
+            .attr("transform", `translate(${margin.left + boundedWidth/2}, ${height})`)
+                .append("text")
+                    .text(xText)
+                    .attr("text-anchor", "middle")
+                    .attr("baseline-shift", "100%");
+
+        const yLabel = svg.append("g")
+        .attr("class", "label y-label")
+        .attr("transform", `translate(${margin.left/2}, ${margin.top + boundedHeight/2})`)
+            .append("text")
+                .attr("transform", "rotate(-90)")
+                .text(yText)
+                .attr("text-anchor", "middle");
+
+
         const lineGenerator = d3.line()
-            .x(d => xScale(+d.x))
-            .y(d => yScale(+d.y));
+            .x(d => xScale(+d[`${xText}`]))
+            .y(d => yScale(+d[`${yText}`]));
 
         const line = g.append("path").datum(data)
             .attr("d", lineGenerator)
-            .attr("fill", "none");
+            .attr("fill", "none")
+            .attr("stroke-width", 3);
                 
 
     }, [data, dimensions])
