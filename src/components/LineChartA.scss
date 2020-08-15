@@ -17,3 +17,17 @@
   path {
       stroke: #AF9309;
   }
+
+  .description {
+    margin-left: 0.8rem;
+    overflow: auto;
+    z-index: 1000;
+  }
+
+  .text-block {
+    box-sizing: border-box;
+    margin-bottom: 30rem;
+    border: 1px solid gray;
+    width: 15%;
+    padding: 0.8rem 0.3rem;
+  }

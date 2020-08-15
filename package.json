@@ -48,6 +48,7 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-hot-loader": "^4.12.21",
+    "react-scrollama": "^2.2.10",
     "reactjs-popup": "^1.5.0"
   }
 }

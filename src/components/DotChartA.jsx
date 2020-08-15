@@ -54,10 +54,17 @@ const DotChartA = (props) =>{
     const dotDataGroup = [dotData1, dotData2, dotData3]
 
     const [dotData, setDotData] = useState(dotData1)
+    const [curTagIndex, setCurTagIndex] = useState(0);
+
 
     function TabButton(props){
       return(
-          <button onClick={() => setDotData(dotDataGroup[props.order])}>{`${props.text}`}</button>
+          <button className={`${curTagIndex === props.order ? 'active' : ''}`} 
+          onClick={() => {
+            setDotData(dotDataGroup[props.order])
+            setCurTagIndex(props.order)
+            }}>{`${props.text}`}
+          </button>
       )
     };
 
@@ -76,7 +83,6 @@ const DotChartA = (props) =>{
         <div className="dotchart__container">
             <div className="dotchart__header">
               <div className="dotchart__header__text__title">
-                <span></span>
                 <h1>你認為哪一項是最重要的民主特徵？</h1>
               </div>
               <div className="dotchart__header__buttons">

@@ -26,7 +26,11 @@ function LineA({ data }){
 
         if (!dimensions) return;
         
-        const { width, height } = dimensions;
+        const  width = dimensions.width,
+               height = dimensions.height * 0.98;
+
+        svg.attr("height", height)
+            .attr("width", width);
         
         const boundedWidth = width - margin.left - margin.right,
               boundedHeight = height - margin.top - margin.bottom;
