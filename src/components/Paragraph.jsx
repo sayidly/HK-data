@@ -6,7 +6,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const Paragraph = () => {
+const Paragraph = (props) => {
 
   const introBlock = React.createRef();
 
@@ -21,7 +21,7 @@ const Paragraph = () => {
   useEffect(() => {
     ScrollTrigger.create({
       trigger: introBlock.current,
-      start: "bottom bottom",
+      start: "top top",
       end: "+50%",
       scrub: true,
       triggerHook: "onEnter",
@@ -31,7 +31,7 @@ const Paragraph = () => {
   })
 
   return (
-    <div className="intro" ref={introBlock}>
+    <div className={`intro ${props.snap}`} ref={introBlock}>
       <div className="intro__title">
         {introContent.title}
       </div>

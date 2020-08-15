@@ -29,6 +29,8 @@ const Intro1 = (props) => {
         console.log(index, self.progress)
       },
     });
+
+    // gsap.to(questionContent.current, {y: 500})
   });
 
   return (
