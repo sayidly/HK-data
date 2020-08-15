@@ -1,5 +1,6 @@
 import {hot} from "react-hot-loader";
 import React, { useEffect, useState } from "react";
+import { Scrollama, Step } from "react-scrollama";
 import './Chart.scss'
 import './DotChartA.scss'
 import DotA from "./charts/DotA";
@@ -78,19 +79,42 @@ const DotChartA = (props) =>{
       <TabButton className="dot001__header__buttons__button" key={key} order={p.order} text={p.text}/>
     )
 
+    const onStepEnter = ({ data }) => {
+      setCurTagIndex(data);
+      setDotData(dotDataGroup[data])
+    };
+
     return(
-      <div className={`dot001 dotchart section ${props.snap}`}>
-        <div className="dotchart__container">
-            <div className="dotchart__header">
-              <div className="dotchart__header__text__title">
-                <h1>你認為哪一項是最重要的民主特徵？</h1>
+      <div className="dot001">
+        <div className={`dotchart section ${props.snap}`}>
+          <div className="dotchart__container">
+              <div className="dotchart__header">
+                <div className="dotchart__header__text__title">
+                  <h1>你認為哪一項是最重要的民主特徵？</h1>
+                </div>
+                <div className="dotchart__header__buttons">
+                  {buttonGroup}
+                </div>
               </div>
-              <div className="dotchart__header__buttons">
-                {buttonGroup}
-              </div>
+              <DotA data={dotData}/>
             </div>
-            <DotA data={dotData}/>
-          </div>
+        </div>
+        <div className="description">
+          <Scrollama 
+           onStepEnter={onStepEnter}
+           offset={0.6}>
+            {tabData.map((d, stepIndex) => (
+            <Step data={stepIndex} key={stepIndex}>
+              <div className="text-block"
+                style={{
+                  opacity: curTagIndex === stepIndex ? 1 : 0.2,
+                }}
+              >
+              </div>
+            </Step>
+          ))}
+          </Scrollama>
+        </div>
       </div>
     );
 

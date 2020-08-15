@@ -1,9 +1,9 @@
 import {hot} from "react-hot-loader";
 import React, { useState } from "react";
+import { Scrollama, Step } from "react-scrollama";
 import './Chart.scss'
 import './LineChartA.scss'
 import LineA from "./charts/LineA";
-import { Scrollama, Step } from "react-scrollama";
 
 const lineData1 = [
   {"工作的穩定性": 1, "對「攬炒」的態度": 3.31},
@@ -48,8 +48,8 @@ const LineChartA = () =>{
   };
 
     return(
-      <div>
-        <div className="line001 linechart section">
+      <div className="line001">
+        <div className="linechart section">
           <div className="linechart__container">
               <div className="linechart__header">
                 <div className="linechart__header__text__title">
