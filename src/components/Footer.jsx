@@ -1,9 +1,9 @@
 import React, { useRef, useEffect } from 'react';
 import "./Footer.scss";
 
-const Footer = () => {
+const Footer = (props) => {
   return (
-    <div className="Footer">
+    <div className={`Footer ${props.snap}`}>
       <div className="Footer__container">
           <div className="Footer__container__creators">
               <p className="Footer__container__creators__text">

@@ -49,7 +49,7 @@ const dotData3 = [
   {"身份": "中國人", "民主意涵": "政府提供失業補助", "number": 0.300},
 ];
 
-const DotChartA = () =>{
+const DotChartA = (props) =>{
 
     const dotDataGroup = [dotData1, dotData2, dotData3]
 
@@ -72,7 +72,7 @@ const DotChartA = () =>{
     )
 
     return(
-      <div className="dot001 dotchart">
+      <div className={`dot001 dotchart ${props.snap}`}>
         <div className="dotchart__container">
             <div className="dotchart__header">
               <div className="dotchart__header__text__title">
@@ -87,7 +87,7 @@ const DotChartA = () =>{
           </div>
       </div>
     );
-  
+
 }
 
 export default hot(module)(DotChartA);

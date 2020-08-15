@@ -10,7 +10,7 @@ import Modal from './Modal';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const Cover = () => {
+const Cover = (props) => {
   const cover = React.createRef();
   const bg = React.createRef();
   const text = React.createRef();
@@ -49,7 +49,7 @@ const Cover = () => {
 
   return (
     <>
-      <div className="cover" ref={cover}>
+      <div className={`cover ${props.snap}`} ref={cover}>
       <a className="logo" href="https://theinitium.com/" target="_blank"><img src={logo} alt="Initium Logo"/></a>
         <img src={bgImage} className="cover__bg" alt="bg"/>
         <div className="cover__text" ref={text}>

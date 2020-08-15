@@ -29,10 +29,10 @@ const lineData5 = [
   {"x": 5, "y": 3.63}
 ]
 
-const LineChartA = () =>{
+const LineChartA = (props) =>{
 
     return(
-      <div className="line001 linechart">
+      <div className={`line001 linechart ${props.snap}`}>
         <div className="linechart__container">
             <div className="linechart__header">
               <div className="linechart__header__text__title">
@@ -44,7 +44,7 @@ const LineChartA = () =>{
           </div>
       </div>
     );
-  
+
 }
 
 export default hot(module)(LineChartA);
