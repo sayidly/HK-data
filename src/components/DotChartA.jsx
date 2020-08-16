@@ -72,7 +72,7 @@ const DotChartA = (props) =>{
     )
 
     return(
-      <div className={`dot001 dotchart section ${props.snap}`}>
+      <div className="dot001 dotchart section">
         <div className="dotchart__container">
             <div className="dotchart__header">
               <div className="dotchart__header__text__title">

@@ -49,7 +49,7 @@ const Cover = (props) => {
 
   return (
     <>
-      <div className={`cover ${props.snap}`} ref={cover}>
+      <div className="cover" ref={cover}>
       <a className="logo" href="https://theinitium.com/" target="_blank"><img src={logo} alt="Initium Logo"/></a>
         <img src={bgImage} className="cover__bg" alt="bg"/>
         <div className="cover__text" ref={text}>

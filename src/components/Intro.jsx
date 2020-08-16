@@ -35,7 +35,7 @@ const Intro1 = (props) => {
 
   return (
     <>
-      <div className={`question ${props.snap}`} ref={questionBlock}>
+      <div className="question" ref={questionBlock}>
         <div className="background">
           <img src={bgImage} className="question__bg" alt="bg"/>
         </div>
