@@ -14,10 +14,12 @@ import {
   independence1,
   independence2
 } from './libs/barChartData.json'
+import {
+  democraticAttr
+} from './libs/dotChartData.json'
 import Footer from './components/Footer';
 // import TestHook from './components/TestHook';
 import Intro from './components/Intro';
-console.log(identity)
 
 const App = () => {
 
@@ -33,7 +35,7 @@ const App = () => {
       <Intro />
       <BarChart data={independence1} />
       <BarChart data={independence2}/>
-      <DotChartA />
+      <DotChartA data={democraticAttr}/>
       <LineChartA />
       <Footer />
     </div>
