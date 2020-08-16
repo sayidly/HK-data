@@ -10,7 +10,7 @@ import Modal from './Modal';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const Cover = (props) => {
+const Cover = () => {
   const cover = React.createRef();
   const bg = React.createRef();
   const text = React.createRef();

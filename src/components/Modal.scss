@@ -12,16 +12,16 @@ a.close {
     font-size: 32px;
     cursor: pointer;
     justify-self: end;
-    padding-right: 15px;
+    // padding-right: 15px;
 }
 
 .modal {
     box-sizing: border-box;
     background-color: $black;
     display: grid;
-    width: 480px;
+    width: 360px;
     // height: 595px;
-    padding: 40px 40px;
+    padding: 0 20px;
     &__content{
         color: $yellow;
         display: flex;
