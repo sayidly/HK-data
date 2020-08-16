@@ -45,3 +45,9 @@
     pointer-events: none;
   }
 }
+
+.question::after {
+  clear: both;
+  content: "";
+  display: block;
+}

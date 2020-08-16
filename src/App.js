@@ -17,11 +17,6 @@ import Intro from './components/Intro';
 import Paragraph from './components/Paragraph';
 console.log(identity)
 
-import { gsap, TweenLite } from 'gsap';
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
-
 const App = () => {
 
   return (
@@ -32,7 +27,7 @@ const App = () => {
       <BarChart data={identity}/>
       <BarChart data={politics}/>
       <Intro />
-      <Paragraph />
+      {/* <Paragraph /> */}
       <DotChartA />
       <LineChartA />
       <Footer />

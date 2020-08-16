@@ -8,8 +8,6 @@ gsap.registerPlugin(ScrollTrigger);
 
 const Paragraph = (props) => {
 
-  const introBlock = React.createRef();
-
   const introContent = {
     title: "民主是什麼？港獨可行嗎？",
     content: [
@@ -18,19 +16,8 @@ const Paragraph = (props) => {
       "港獨的問題也分成兩種：一是關於港獨現實效果的評估，二則關於港獨能否被公開討論及思考；從數據可見，自視為「香港人」和「本土派」的市民對港獨較為開放、包容。"
   ]}
 
-  // useEffect(() => {
-  //   ScrollTrigger.create({
-  //     trigger: introBlock.current,
-  //     start: "top top",
-  //     end: "+50%",
-  //     scrub: true,
-  //     triggerHook: "onEnter",
-  //     invalidateOnRefresh: true,
-  //   })
-  // })
-
   return (
-    <div className="intro section" ref={introBlock}>
+    <div className="intro">
       <div className="intro__title">
         {introContent.title}
       </div>
