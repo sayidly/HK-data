@@ -15,7 +15,6 @@ import {
 import Footer from './components/Footer';
 // import TestHook from './components/TestHook';
 import Intro from './components/Intro';
-import Paragraph from './components/Paragraph';
 console.log(identity)
 
 const App = () => {
@@ -31,7 +30,6 @@ const App = () => {
       <Intro />
       <BarChart data={independence}/>
       <DotChartA />
-      <Paragraph />
       <LineChartA />
       <Footer />
     </div>
