@@ -10,7 +10,6 @@ const Paragraph = (props) => {
   const introBlock = React.createRef();
 
   useEffect(() => {
-    gsap.to(introBlock.current, {y: 500});
   })
 
   return (

@@ -6,7 +6,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import { Scrollama, Step } from "react-scrollama";
 
-import Paragraph from '../components/Paragraph'
+import Paragraph from './Paragraph'
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -26,20 +26,7 @@ const Intro1 = (props) => {
   ]}
 
   useEffect(() => {
-    ScrollTrigger.create({
-      trigger: questionBlock.current,
-      start: "top top",
-      end: "+50%",
-      scrub: true,
-      pin: true,
-      invalidateOnRefresh: true,
-      onUpdate: self => {
-        let index = Math.round(self.progress * (questionList.length-1))
-        setText(questionList[index])
-        setIndex(index)
-        console.log(index, self.progress)
-      },
-    });
+
   });
 
   return (
@@ -50,7 +37,7 @@ const Intro1 = (props) => {
         </div>
         <div className="question__title" ref={questionContent}>
           {questionList.map((questionItem, index) =>
-            <div style={{display: text == questionItem ? "block" : "none"}}>
+            <div style={{display: "block"}}>
               <div>{questionList[index]}</div>
             </div>
           )}
