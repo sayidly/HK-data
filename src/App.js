@@ -9,7 +9,8 @@ import LineChartA from './components/LineChartA';
 import BarChart from './components/BarChart'
 import {
   identity,
-  politics
+  politics,
+  independence
 } from './libs/barChartData.json'
 import Footer from './components/Footer';
 // import TestHook from './components/TestHook';
@@ -33,7 +34,9 @@ const App = () => {
       <BarChart data={politics}/>
       <Intro />
       <Paragraph />
+      <BarChart data={independence}/>
       <DotChartA />
+      <Paragraph />
       <LineChartA />
       <Footer />
     </div>

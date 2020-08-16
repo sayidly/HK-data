@@ -63,6 +63,7 @@
 }
 
 .graph {
+  display: flex;
   height: 100%;
   .graph-item {
     display: inline-block;
