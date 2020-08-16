@@ -68,7 +68,7 @@ function BarChart (props) {
     <div>
       <div className={`bar-chart section ${props.snap}`}>
         <div className="centered">
-          <h1 className="title">{props.data.tags[curTagIndex].title}</h1>
+          <h1 className="title">{props.data.title}</h1>
           {tags}
           {labels}
           <Chart curTag={curTag}/>
