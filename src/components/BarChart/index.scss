@@ -1,5 +1,7 @@
 .bar-chart {
   // width: 40vw;
+  position: sticky;
+  top: 0;
   margin: 0 auto;
   .title {
     position: relative;
@@ -61,6 +63,7 @@
 }
 
 .graph {
+  display: flex;
   height: 100%;
   .graph-item {
     display: inline-block;

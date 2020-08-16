@@ -1,9 +1,11 @@
 import React, { useState } from 'react'
 import Graph from './Graph'
+import { Scrollama, Step } from "react-scrollama";
 
 import './index.scss'
 
 function Chart (props) {
+  // console.log(props)
   const { curTag } = props
   return (
     <div className="chart">
@@ -58,14 +60,38 @@ function BarChart (props) {
     </div>
   )
 
+  const onStepEnter = ({ data }) => {
+    setCurTagIndex(data);
+  };
+
   return (
-    <div className={`bar-chart section ${props.snap}`}>
-      <div className="centered">
-        <h1 className="title">{props.data.title}</h1>
-        {tags}
-        {labels}
-        <Chart curTag={curTag}/>
+    <div>
+      <div className={`bar-chart section ${props.snap}`}>
+        <div className="centered">
+          <h1 className="title">{props.data.title}</h1>
+          {tags}
+          {labels}
+          <Chart curTag={curTag}/>
+        </div>
       </div>
+      <div className="description">
+          <Scrollama
+           onStepEnter={onStepEnter}
+           offset={0.6}>
+            {props.data.tags.map((d, stepIndex) => (
+            <Step data={stepIndex} key={stepIndex}>
+              <div className="text-block"
+                style={{
+                  border: "none",
+                  height: "5rem",
+                  opacity: curTagIndex === stepIndex ? 1 : 0.2,
+                }}
+              >
+              </div>
+            </Step>
+          ))}
+          </Scrollama>
+        </div>
     </div>
   )
 }
