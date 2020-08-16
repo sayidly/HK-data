@@ -11,7 +11,8 @@ import {
   identity,
   politics,
   attitudes,
-  independence
+  independence1,
+  independence2
 } from './libs/barChartData.json'
 import Footer from './components/Footer';
 // import TestHook from './components/TestHook';
@@ -30,7 +31,8 @@ const App = () => {
       <BarChart data={politics}/>
       <BarChart data={attitudes}/>
       <Intro />
-      <BarChart data={independence}/>
+      <BarChart data={independence1} />
+      <BarChart data={independence2}/>
       <DotChartA />
       <LineChartA />
       <Footer />
