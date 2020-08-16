@@ -1,12 +1,12 @@
 @import '../styles/variables';
 
 .intro {
-  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   box-sizing: border-box;
+  height: 100vh;
   background-color: $light-green;;
 
   &__title,
@@ -31,5 +31,13 @@
   &__content {
     font-size: 16px;
     line-height: 2;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;;
+    top: 0;
   }
 }

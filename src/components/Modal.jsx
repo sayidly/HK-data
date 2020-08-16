@@ -15,16 +15,20 @@ const Modal = (props) => {
           &times;
         </a>
         <div class="modal__content">
-          <h5 class="modal__content__title">研究團隊：</h5>
-          <p class="modal__content__text">xxxx</p>
+          <h5 class="modal__content__title">調查時間：</h5>
+          <p class="modal__content__text">2020年6月</p>
         </div>
         <div class="modal__content">
-          <h5 class="modal__content__title">調查時間：</h5>
-          <p class="modal__content__text">2020 年 x 月 -x 月</p>
+          <h5 class="modal__content__title">負責學者：</h5>
+          <p class="modal__content__text">李立峯、鄧鍵一、鄭煒</p>
+        </div>
+        <div class="modal__content">
+          <h5 class="modal__content__title display_contents">調查機構：</h5>
+          <p class="modal__content__text display_contents">香港中文大學傳播與民意調查中心（電話調查受政策創新與統籌辦事處的公共政策研究資助計劃資助）</p>
         </div>
         <div class="modal__content">
           <h5 class="modal__content__title">調查人數：</h5>
-          <p class="modal__content__text">xxxx人</p>
+          <p class="modal__content__text">1574人</p>
         </div>
         <div class="modal__content">
           <h5 class="modal__content__title">人口特徵：</h5>
