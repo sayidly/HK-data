@@ -14,11 +14,11 @@ const DotChartA = (props) =>{
 
 
     function TabButton(props){
-      console.log(props)
+      // console.log(props)
       return(
           <button className={`${curTagIndex === props.order ? 'active' : ''}`}
           onClick={() => {
-            setDotData(dotDataGroup[props.order])
+            setDotData(dotDataGroup[props.order].data)
             setCurTagIndex(props.order)
             }}>{`#${props.text}`}
           </button>

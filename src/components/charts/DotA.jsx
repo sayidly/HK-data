@@ -115,9 +115,9 @@ function DotA({ data }){
         const handleMouseOver = (datum) => {
 
             let description = `<span>${datum["民主意涵"]}: ${datum.number}</span></br>`
-
+            // console.log(d3.select(this).attr("cx"))
             const currentX = d3.event.x;
-            const currentY = d3.event.y;
+            const currentY = d3.event.x;
                 
             toolTip
                 .style("opacity", 1)
