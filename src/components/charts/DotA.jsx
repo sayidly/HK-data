@@ -11,10 +11,44 @@ function DotA({ data }){
 
     // will be called initially, on data change and when dimensions change
     useEffect(() => {
+        
+        const colorScale = d3.scaleOrdinal()
+            .domain(data.map(d => d["民主意涵"]))
+            .range(["#ED7054", "#1E663B", "#0071BC", "#333333"]);
+
+        const legendWrapper = d3.select(legendRef.current);
+        const legendGroup = [...new Set(data.map(d => d["民主意涵"]))]
+        
+        legendWrapper.selectAll(".legend").remove();
+
+        const legend = legendWrapper.selectAll(".legend")
+            .data(legendGroup)
+            .enter()
+            .append("div")
+                .attr("class", "legend");
+
+        legend.append("div");
+        legend.append("p");
+
+        legend.select("p")
+            .html(d => `${d}`)
+            .style("color", colorScale);
+
+        legend.select("div")
+            .attr("class", "legend-circle")
+            .style("background-color", colorScale)
+
+        let legendWrapperHeight;
+
+        if (legendWrapper) {
+            legendWrapperHeight = d3.select(".legend-wrapper").node().getBoundingClientRect().height;
+            
+        }
+
         const margin = {
             top: 30,
             right: 20,
-            bottom: 100,
+            bottom: 50,
             left: 50
         }
 
@@ -29,7 +63,11 @@ function DotA({ data }){
 
         if (!dimensions) return;
         
-        const { width, height } = dimensions;
+        const  width = dimensions.width,
+               height = dimensions.height * 0.98 - legendWrapperHeight;
+
+        svg.attr("height", height)
+            .attr("width", width);
         
         const boundedWidth = width - margin.left - margin.right,
               boundedHeight = height - margin.top - margin.bottom;
@@ -44,10 +82,6 @@ function DotA({ data }){
         const yScale = d3.scaleLinear()
             .domain([0, 0.7])
             .range([boundedHeight, 0]);
-
-        const colorScale = d3.scaleOrdinal()
-            .domain(data.map(d => d["民主意涵"]))
-            .range(["#ED7054", "#1E663B", "#0071BC", "#333333"])
 
         const formatPercent = d3.format(".0%");
 
@@ -74,7 +108,8 @@ function DotA({ data }){
 
         const handleMouseOut = (datum) => {
             toolTip
-                .style("opacity", 0);
+                .style("opacity", 0)
+                .html(" ");
         }
             
         const handleMouseOver = (datum) => {
@@ -98,35 +133,17 @@ function DotA({ data }){
             .attr("class", "dot")
             .attr("cx", d => xScale(d["身份"]))
             .attr("cy", d => yScale(d.number))
+            .attr("r", 0)
         .merge(dot)
             .attr("fill", d => colorScale(d["民主意涵"]))
-            .attr("r", radius)
+            .attr("r", radius);
+            
+        dot.exit()
+        .remove();
+
+        d3.selectAll(".dot")
             .on("mouseover", d => handleMouseOver(d))
-            .on("mouseout", handleMouseOut)
-
-        dot.exit().remove();
-
-        const legendWrapper = d3.select(legendRef.current);
-        const legendGroup = [...new Set(data.map(d => d["民主意涵"]))]
-        
-        legendWrapper.selectAll(".legend").remove();
-
-        const legend = legendWrapper.selectAll(".legend")
-            .data(legendGroup)
-            .enter()
-            .append("div")
-                .attr("class", "legend");
-
-        legend.append("div");
-        legend.append("p");
-
-        legend.select("p")
-            .html(d => `${d}`)
-            .style("color", colorScale);
-
-        legend.select("div")
-            .attr("class", "legend-circle")
-            .style("background-color", colorScale)
+            .on("mouseout", handleMouseOut)        
                     
     }, [data, dimensions])
 

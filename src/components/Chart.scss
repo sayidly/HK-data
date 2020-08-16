@@ -1,8 +1,13 @@
 .dotchart, .linechart {
+    position: sticky;
+    top: 0;
     &__container {
-        display: flex;
-        flex-direction: column;
-        height:100%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-right: -50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
     }
     &__header {
         display: flex;
@@ -10,19 +15,36 @@
         &__buttons{
             display: flex;
             justify-content: space-between;
+            margin-bottom: 20px;
+            button {
+                font-size: 20px;
+                font-weight: bold;
+                color: #1B492E;
+                padding: 5px 10px;
+                border-radius: 20px;
+                border-style: none;
+                margin-right: 10px;
+                cursor: pointer;
+            }
+            button.active {
+                color: #FFF;
+                background-color: #1B492E;
+            }            
           }
         &__text {
             &__title {
                 color: #222;
                 display:flex;
                 align-items: center;
-                & span{
+                &:before {
+                    content: '';
+                    position: absolute;
+                    left: -70px;
                     width: 40px;
                     height: 40px;
                     border-radius: 50%;
-                    margin-right: 30px;
-                    background-color: #222;
-                }
+                    background-color: black;
+                  }
             }
         }
 
@@ -30,16 +52,6 @@
     }  
 }
 
-button {
-    border-style: none;
-    font-size: 20px;
-    font-weight: bold;
-    color: #1B492E;
-    padding: 5px 10px;
-    border-radius: 20px;
-    margin-right: 10px;
-    cursor: pointer;
-}
 
 .wrapper {
     position: relative;
@@ -51,7 +63,8 @@ button {
   }
 
   .legend-wrapper {
-      margin-top: 25px;
+      box-sizing: border-box;
+      padding-bottom: 20px;
       width: 100%;
       flex-flow: wrap;
   }
@@ -77,8 +90,16 @@ button {
       left:0;
   }
   
-  svg {
-    width: 100%;
-    height: 100%;
+  .description {
+    margin-left: 0.8rem;
+    overflow: auto;
+    z-index: 1000;
   }
-  
+
+  .text-block {
+    box-sizing: border-box;
+    margin-bottom: 30rem;
+    border: 1px solid gray;
+    width: 15%;
+    padding: 0.8rem 0.3rem;
+  }

@@ -1,19 +1,24 @@
 @import '../styles/variables';
 
-  .x-axis path, 
-  .x-axis line,
-  .y-axis path,
-  .y-axis line
-  {
-    stroke: $black;
-  }
+  .line001 {
 
-  .x-axis text, 
-  .y-axis text
-  {
-      fill: black;
-  }
+    .x-axis path, 
+    .x-axis line,
+    .y-axis path,
+    .y-axis line
+    {
+      stroke: $black;
+    }
 
-  path {
-      stroke: #AF9309;
+    .x-axis text, 
+    .y-axis text
+    {
+        fill: black;
+    }
+
+    path {
+        stroke: #AF9309;
+    }
+
   }
+  
