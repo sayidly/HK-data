@@ -39,7 +39,7 @@ function LineA({ data }){
             yText = Object.keys(data[0])[1];
 
         const xScale = d3.scaleLinear()
-            .domain([1, 5])
+            .domain([1, d3.max(data, d => d[`${xText}`])])
             .range([0, boundedWidth]);
 
         const yScale = d3.scaleLinear()
@@ -69,15 +69,22 @@ function LineA({ data }){
                     .text(xText)
                     .attr("text-anchor", "middle")
                     .attr("baseline-shift", "100%");
-
+        
         const yLabel = svg.append("g")
         .attr("class", "label y-label")
-        .attr("transform", `translate(${margin.left/2}, ${margin.top + boundedHeight/2})`)
             .append("text")
-                .attr("transform", "rotate(-90)")
-                .text(yText)
-                .attr("text-anchor", "middle");
 
+        const yTextToList = [...yText];
+
+        yLabel.selectAll("tspan")
+            .data(yTextToList)
+            .enter()
+            .append("tspan")
+                .text(d => d)
+                .attr("x", 0)
+                .attr("dy", "1.2em");
+        const tspanHeight = d3.selectAll("tspan").node().getBoundingClientRect().height * yTextToList.length;
+        yLabel.attr("transform", `translate(${margin.left/2}, ${margin.top + boundedHeight/2 - tspanHeight / 2})`)
 
         const lineGenerator = d3.line()
             .x(d => xScale(+d[`${xText}`]))
