@@ -2,12 +2,12 @@
     position: sticky;
     top: 0;
     &__container {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        margin-right: -50%;
-        transform: translate(-50%, -50%);
-        width: 100%;
+        // position: absolute;
+        // top: 50%;
+        // left: 50%;
+        // margin-right: -50%;
+        // transform: translate(-50%, -50%);
+        // width: 100%;
     }
     &__header {
         display: flex;
@@ -88,6 +88,8 @@
       position: absolute;
       top:0;
       left:0;
+      color: #DDD5AC;
+      padding: 0.3% 0.6%;
   }
   
   .description {

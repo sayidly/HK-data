@@ -66,12 +66,10 @@ function BarChart (props) {
   return (
     <div>
       <div className={`bar-chart section ${props.snap}`}>
-        <div className="centered">
-          <h1 className="title">{props.data.title}</h1>
-          {tags}
-          {labels}
-          <Chart curTag={curTag}/>
-        </div>
+        <h1 className="title">{props.data.title}</h1>
+        {tags}
+        {labels}
+        <Chart curTag={curTag}/>
       </div>
       <div className="description">
           <Scrollama

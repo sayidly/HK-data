@@ -5,7 +5,8 @@
   justify-content: center;
   align-items: center;
   box-sizing: border-box;
-  margin: 16% auto;
+  margin: 0 auto;
+  padding: 10% 0;
   max-width: 800px;
 
   &__highlight {
@@ -20,9 +21,8 @@
     }
   }
   &__content {
-    font-size: 20px;
-    line-height: 2;
-    width: 40%;
+    font-size: 18px;
+    line-height: 1.6;
     margin-left: auto;
     letter-spacing: 0.1em;
     @include media(">phone", "<=tablet") {
@@ -32,10 +32,8 @@
   }
   &__center {
     font-size: 16px;
-    line-height: 2;
-    // width: 60%;
-    margin-left: auto;
-    margin-right: auto;
+    line-height: 1.6;
+    margin: 0 auto;
     letter-spacing: 0.1em;
     @include media(">phone", "<=tablet") {
       font-size: 16px;

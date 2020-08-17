@@ -109,21 +109,21 @@ function DotA({ data }){
         const handleMouseOut = (datum) => {
             toolTip
                 .style("opacity", 0)
+                .style("background-color", "none")
                 .html(" ");
         }
             
         const handleMouseOver = (datum) => {
-
-            let description = `<span>${datum["民主意涵"]}: ${datum.number}</span></br>`
-            // console.log(d3.select(this).attr("cx"))
-            const currentX = d3.event.x;
-            const currentY = d3.event.x;
+            let description = `<span>${datum["民主意涵"]}  ${formatPercent(datum.number)}</span></br>`
+            const currentX = xScale(datum["身份"]);
+            const currentY = yScale(datum.number);
                 
             toolTip
                 .style("opacity", 1)
+                .style("background-color", "black")
                 .html(description)
                 .style("left", `${currentX}px`)
-                .style("top", `${currentY}px`);           
+                .style("top", `${currentY - 5}px`);           
             
         }
 
@@ -136,22 +136,22 @@ function DotA({ data }){
             .attr("r", 0)
         .merge(dot)
             .attr("fill", d => colorScale(d["民主意涵"]))
-            .attr("r", radius);
+            .attr("r", radius)
+            .on("mouseover", handleMouseOver)
+            .on("mouseout", handleMouseOut)    
             
         dot.exit()
         .remove();
-
-        d3.selectAll(".dot")
-            .on("mouseover", d => handleMouseOver(d))
-            .on("mouseout", handleMouseOut)        
                     
     }, [data, dimensions])
 
     return(
         <div className="wrapper dot-wrapper" ref={wrapperRef} >
-            <div className="tool-tip dot-tooltip"></div>
             <div className="legend-wrapper" ref={legendRef}></div>
-            <svg ref={svgRef}></svg>
+            <div style={{position:"relative"}}>
+                <div className="tool-tip dot-tooltip"></div>
+                <svg ref={svgRef}></svg>
+            </div>
         </div>
     )
 
