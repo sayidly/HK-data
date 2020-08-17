@@ -63,6 +63,7 @@ function BarChart (props) {
   const onStepEnter = ({ data }) => {
     setCurTagIndex(data);
   };
+
   return (
     <div>
       <div className={`bar-chart section ${props.snap}`}>
@@ -80,7 +81,7 @@ function BarChart (props) {
               <div className="text-block"
                 style={{
                   "min-height": "5rem",
-                  // border: props.data.tags[curTagIndex].texts !== "" ? "none" : "1px solid gray",
+                  border: props.data.tags[curTagIndex].texts === undefined ? "none" : "1px solid gray",
                   opacity: curTagIndex === stepIndex ? 1 : 0,
                 }}
               >
