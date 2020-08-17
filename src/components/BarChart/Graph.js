@@ -4,8 +4,8 @@ function Tooltip (props) {
   console.log(props)
   const style = {
     position: 'fixed',
-    top: props.x + 'px',
-    left: props.y + 'px'
+    top: props.x + 10 + 'px',
+    left: props.y + 10 + 'px'
   }
   const tips = props.labels.map((label, index) => {
     const style = {
