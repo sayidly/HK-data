@@ -17,6 +17,9 @@ import {
 import {
   democraticAttr
 } from './libs/dotChartData.json'
+import {
+  lineData
+} from './libs/lineChartData.json'
 import Footer from './components/Footer';
 // import TestHook from './components/TestHook';
 import Intro from './components/Intro';
@@ -36,7 +39,7 @@ const App = () => {
       <BarChart data={independence1} />
       <BarChart data={independence2}/>
       <DotChartA data={democraticAttr}/>
-      <LineChartA />
+      <LineChartA data={lineData}/>
       <Footer />
     </div>
   );
