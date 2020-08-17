@@ -16,7 +16,8 @@
 }
 
 .section {
-  margin: 0 auto;
+  padding: 50px 70px;
+  margin: 12.5% auto;
   max-width: 800px;
   height: 100vh;
   position: relative;
@@ -24,6 +25,21 @@
   @include media(">phone", "<=tablet") {
     padding: 25px;
     margin: 40px 0;
+  }
+}
+
+p {
+  line-height: 1.6;
+}
+
+strong {
+  background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+  background-repeat: no-repeat;
+  background-size: 100% .6em;
+  background-position: 50% 88%;
+  transition: background-size 0.25s ease-in;
+  &:hover {
+    background-size: 100% 100%;
   }
 }
 
