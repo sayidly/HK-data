@@ -59,9 +59,12 @@ const DotChartA = (props) =>{
             <Step data={stepIndex} key={stepIndex}>
               <div className="text-block"
                 style={{
-                  opacity: curTagIndex === stepIndex ? 1 : 0.2,
+                  "min-height": "5rem",
+                  border: curTagIndex === (tabData.length - 1) ? "1px solid gray" : "none",
+                  opacity: curTagIndex === stepIndex ? 1 : 0,
                 }}
               >
+                {curTagIndex === (tabData.length - 1) ? props.data.texts : ""}
               </div>
             </Step>
           ))}
