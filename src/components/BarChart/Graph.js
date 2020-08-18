@@ -1,4 +1,7 @@
 import React, { useState } from 'react'
+import { format } from 'd3'
+
+const formatPercent = format(".0%");
 
 function Tooltip (props) {
   console.log(props)
@@ -16,7 +19,7 @@ function Tooltip (props) {
     return (
       <div style={style}>
         <span className="name">{label.name}</span>
-        <span className="value">{props.values[index] * 100}%</span>
+        <span className="value">{formatPercent(props.values[index])}</span>
       </div>
     )
   })
