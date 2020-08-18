@@ -75,12 +75,12 @@ function BarChart (props) {
       <div className="description">
           <Scrollama
            onStepEnter={onStepEnter}
-           offset={0.6}>
+           offset={0.8}>
             {props.data.tags.map((d, stepIndex) => (
             <Step data={stepIndex} key={stepIndex}>
               <div className="text-block"
                 style={{
-                  "min-height": "5rem",
+                  minHeight: "5rem",
                   border: props.data.tags[curTagIndex].texts === undefined ? "none" : "1px solid gray",
                   opacity: curTagIndex === stepIndex ? 1 : 0,
                 }}
