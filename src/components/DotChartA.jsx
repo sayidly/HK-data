@@ -60,7 +60,7 @@ const DotChartA = (props) =>{
               <div className="text-block"
                 style={{
                   minHeight: "5rem",
-                  border: curTagIndex === (tabData.length - 1) ? "1px solid gray" : "none",
+                  border: curTagIndex === (tabData.length - 1) ? "2px solid black" : "none",
                   opacity: curTagIndex === stepIndex ? 1 : 0,
                 }}
               >
