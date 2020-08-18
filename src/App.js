@@ -16,7 +16,9 @@ import {
 } from './libs/barChartData.json'
 import {
   democraticAttr1,
-  democraticAttr2
+  democraticAttr2,
+  democraticAttr3,
+  democraticAttr4,
 } from './libs/dotChartData.json'
 import {
   lineData
@@ -41,6 +43,8 @@ const App = () => {
       <BarChart data={independence2}/>
       <DotChartA data={democraticAttr1}/>
       <DotChartA data={democraticAttr2}/>
+      <DotChartA data={democraticAttr3}/>
+      <DotChartA data={democraticAttr4}/>
       <LineChartA data={lineData}/>
       <Footer />
     </div>
