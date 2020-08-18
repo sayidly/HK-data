@@ -15,7 +15,6 @@ const BarChartA = (props) => {
   const [barData, setBarData] = useState([]);
 
   useEffect(() => {
-    console.log("test")
   });
 
   return(

@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 
 function Tooltip (props) {
-  console.log(props)
   const style = {
     position: 'fixed',
     top: props.x + 10 + 'px',

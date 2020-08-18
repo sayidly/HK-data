@@ -15,7 +15,6 @@ import Footer from './components/Footer';
 // import TestHook from './components/TestHook';
 import Intro from './components/Intro';
 import Paragraph from './components/Paragraph';
-console.log(identity)
 
 import { gsap, TweenLite } from 'gsap';
 import { ScrollTrigger } from "gsap/ScrollTrigger";

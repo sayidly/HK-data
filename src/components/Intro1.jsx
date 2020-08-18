@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import bgImage from '../images/questions-about-democracy.png';
+import bgImage from '../images/intro1.png';
+
+import './Intro.scss';
 
 import Paragraph from './Paragraph';
 import Questions from './Questions';
-import BarChart from './BarChart'
+import BarChart from './BarChart';
 
 import {
   independence1,
@@ -11,6 +13,12 @@ import {
 } from '../libs/barChartData.json'
 
 const Intro1 = () => {
+
+  const introColors = {
+    bgColor: "#ddd5ac",
+    textColor: "#1e663b",
+    highlightColor: "#ef9b7d"
+  }
 
   const questionList=["民主到底是什麼？", "港獨現實嗎？", "港獨能被公開討論嗎？"];
   const introContent = {
@@ -22,8 +30,8 @@ const Intro1 = () => {
 
   return (
     <>
-      <Questions questionList={questionList} bgImage={bgImage} />
-      <Paragraph introContent={introContent} />
+      <Questions class="intro1" questionList={questionList} bgImage={bgImage} />
+      <Paragraph class="intro1" introContent={introContent} />
       <BarChart data={independence1} />
       <BarChart data={independence2}/>
     </>

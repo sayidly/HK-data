@@ -42,8 +42,9 @@ const App = () => {
       <BarChart data={politics}/>
       <BarChart data={attitudes}/>
       <Intro1 />
-      <BarChart data={independence1} />
-      <BarChart data={independence2}/>
+      <Intro2 />
+      <Intro3 />
+      <Intro4 />
       <DotChartA data={democraticAttr1}/>
       <DotChartA data={democraticAttr2}/>
       <DotChartA data={democraticAttr3}/>

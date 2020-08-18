@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import bgImage from '../images/questions-about-democracy.png';
+import bgImage from '../images/intro4.png';
+
+import './Intro.scss';
 
 import Paragraph from './Paragraph';
 import Questions from './Questions';
@@ -7,6 +9,12 @@ import BarChart from './BarChart'
 
 
 const Intro4 = () => {
+
+  const introColors = {
+    bgColor: "#112b5e",
+    textColor: "#0ed8c9",
+    highlightColor: "#ea497b"
+  }
 
   const questionList=["未來五年，家庭經濟狀況會變成什麼樣？", "向上流動機會如何？", "工作還穩定嗎？未來想移民嗎？"];
   const introContent = {
@@ -18,8 +26,8 @@ const Intro4 = () => {
 
   return (
     <>
-      <Questions questionList={questionList} bgImage={bgImage} />
-      <Paragraph introContent={introContent} />
+      <Questions class="intro4" questionList={questionList} bgImage={bgImage} />
+      <Paragraph class="intro4" introContent={introContent} />
     </>
   )
 }

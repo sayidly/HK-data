@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import bgImage from '../images/questions-about-democracy.png';
+import bgImage from '../images/intro2.png';
+
+import './Intro.scss';
 
 import Paragraph from './Paragraph';
 import Questions from './Questions';
@@ -7,6 +9,12 @@ import BarChart from './BarChart'
 
 
 const Intro2 = () => {
+
+  const introColors = {
+    bgColor: "#282828",
+    textColor: "#ef8a2e",
+    highlightColor: "#27a4e2"
+  }
 
   const questionList=["若香港被國際制裁，中央損失更多？", "即使打擊香港經濟，也對我沒影響？", "國際關注下，局勢變壞反而是好事？", "攬炒越來越嚴峻，對香港更好？"];
   const introContent = {
@@ -17,8 +25,8 @@ const Intro2 = () => {
 
   return (
     <>
-      <Questions questionList={questionList} bgImage={bgImage} />
-      <Paragraph introContent={introContent} />
+      <Questions class="intro2" questionList={questionList} bgImage={bgImage}/>
+      <Paragraph class="intro2" introContent={introContent}/>
     </>
   )
 }

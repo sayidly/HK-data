@@ -25,7 +25,6 @@ const Questions = (props) => {
         let index = Math.round(self.progress * (questionList.length-1))
         setText(questionList[index])
         setIndex(index)
-        console.log(index, self.progress)
       },
     });
   });

@@ -4,9 +4,6 @@ import useResizeObserver from "use-resize-observer";
 
 function Bar({ data, barIndex }){
 
-  console.log(data);
-  console.log(data.length);
-
   const legendRef = React.createRef();
   const svgRef = React.createRef();
   const gRef = React.createRef();

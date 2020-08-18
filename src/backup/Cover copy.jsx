@@ -31,8 +31,6 @@ const Cover = () => {
 
     const eleHeight = document.getElementById('coverContent').clientHeight;
     const containerHeight = document.getElementById('scrollContainer').clientHeight;
-    console.log(eleHeight);
-    console.log(containerHeight);
 
     gsap.timeline({scrollTrigger:{
       trigger: cover.current,

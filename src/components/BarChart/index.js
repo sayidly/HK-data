@@ -5,7 +5,6 @@ import { Scrollama, Step } from "react-scrollama";
 import './index.scss'
 
 function Chart (props) {
-  // console.log(props)
   const { curTag } = props
   return (
     <div className="chart">
