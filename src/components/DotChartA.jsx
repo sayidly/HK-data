@@ -54,12 +54,12 @@ const DotChartA = (props) =>{
         <div className="description">
           <Scrollama
            onStepEnter={onStepEnter}
-           offset={0.6}>
+           offset={0.8}>
             {tabData.map((d, stepIndex) => (
             <Step data={stepIndex} key={stepIndex}>
               <div className="text-block"
                 style={{
-                  "min-height": "5rem",
+                  minHeight: "5rem",
                   border: curTagIndex === (tabData.length - 1) ? "1px solid gray" : "none",
                   opacity: curTagIndex === stepIndex ? 1 : 0,
                 }}
