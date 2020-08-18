@@ -14,7 +14,7 @@ function DotA({ data }){
         
         const colorScale = d3.scaleOrdinal()
             .domain(data.map(d => d["民主意涵"]))
-            .range(["#ED7054", "#1E663B", "#0071BC", "#333333"]);
+            .range(["#1E663B", "#C64530", "#546D16", "#C45E31"]);
 
         const legendWrapper = d3.select(legendRef.current);
         const legendGroup = [...new Set(data.map(d => d["民主意涵"]))]
