@@ -15,7 +15,8 @@ import {
   independence2
 } from './libs/barChartData.json'
 import {
-  democraticAttr
+  democraticAttr1,
+  democraticAttr2
 } from './libs/dotChartData.json'
 import {
   lineData

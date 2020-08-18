@@ -80,11 +80,12 @@ function BarChart (props) {
             <Step data={stepIndex} key={stepIndex}>
               <div className="text-block"
                 style={{
-                  border: "none",
-                  height: "5rem",
-                  opacity: curTagIndex === stepIndex ? 1 : 0.2,
+                  "min-height": "5rem",
+                  border: props.data.tags[curTagIndex].texts === undefined ? "none" : "1px solid gray",
+                  opacity: curTagIndex === stepIndex ? 1 : 0,
                 }}
               >
+                {props.data.tags[curTagIndex].texts}
               </div>
             </Step>
           ))}
