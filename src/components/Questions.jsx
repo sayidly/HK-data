@@ -1,48 +1,43 @@
 import React, { useState, useEffect } from 'react';
+import { Scrollama, Step } from 'react-scrollama';
 import './Questions.scss';
-import { gsap, TweenLite } from 'gsap';
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
 
 const Questions = (props) => {
   const questionList = props.questionList;
   const bgImage = props.bgImage;
-  const [text, setText] = useState(questionList[0]);
-  const [index, setIndex] = useState(0);
-  const questionBlock = React.createRef();
-  const questionContent = React.createRef();
 
-  useEffect(() => {
-    ScrollTrigger.create({
-      trigger: questionBlock.current,
-      start: "top top",
-      end: "+50%",
-      scrub: true,
-      pin: true,
-      invalidateOnRefresh: true,
-      onUpdate: self => {
-        let index = Math.round(self.progress * (questionList.length-1))
-        setText(questionList[index])
-        setIndex(index)
-        console.log(index, self.progress)
-      },
-    });
-  });
+  console.log(questionList);
+
+  const [text, setText] = useState(questionList[0]);
+
+  const onStepEnter = ({ data }) => {
+    setText(data);
+  };
+
+  const onStepExit = ({ element }) => {
+    element.style.backgroundColor = "none";
+  };
 
   return (
-    <div className="question" ref={questionBlock}>
-        <div className="background">
-          <img src={bgImage} className="question__bg" alt="bg"/>
-        </div>
-        <div className="question__title" ref={questionContent}>
-          {questionList.map((questionItem, index) =>
-            <div key={index} style={{display: text == questionItem ? "block" : "none"}}>
-              <div>{questionList[index]}</div>
-            </div>
-          )}
-        </div>
+    <div className="question">
+      <div className="background" style={{ position: 'sticky', top: 0}}>
+        <img src={bgImage} className="question__bg" alt="bg"/>
       </div>
+      <Scrollama offset="0.5" onStepEnter={onStepEnter} onStepExit={onStepExit} >
+        {questionList.map((questionItem, stepIndex) => (
+          <Step data={questionItem} key={stepIndex}>
+            <div className="question__title"
+              style={{
+                marginBottom: '50vh',
+                opacity: text == questionItem ? 1 : 0.2,
+              }}
+            >
+              {questionList[stepIndex]}
+            </div>
+          </Step>
+        ))}
+      </Scrollama>
+    </div>
   )
 }
 
