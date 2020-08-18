@@ -22,7 +22,10 @@ import {
 } from './libs/lineChartData.json'
 import Footer from './components/Footer';
 // import TestHook from './components/TestHook';
-import Intro from './components/Intro';
+import Intro1 from './components/Intro1';
+import Intro2 from './components/Intro2';
+import Intro3 from './components/Intro3';
+import Intro4 from './components/Intro4';
 
 const App = () => {
 
@@ -35,9 +38,10 @@ const App = () => {
       <Text type="content" text={["整體而言有近6成市民支持運動，但兩極化情況明顯——非常支持及非常不支持的市民合共57.2%。若將數字按身份認同及政治立場劃分，可明顯看到支持陣營以香港人、本土派及泛民主派為主；而反對陣營則以混合身份、中國人及建制派為主。"]} />
       <BarChart data={politics}/>
       <BarChart data={attitudes}/>
-      <Intro />
-      <BarChart data={independence1} />
-      <BarChart data={independence2}/>
+      <Intro1 />
+      <Intro2 />
+      <Intro3 />
+      <Intro4 />
       <DotChartA data={democraticAttr}/>
       <LineChartA data={lineData}/>
       <Footer />
