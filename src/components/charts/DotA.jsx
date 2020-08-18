@@ -2,8 +2,9 @@ import React, { useEffect } from "react";
 import * as d3 from "d3";
 import useResizeObserver from "./useResizeObserver";
 
-function DotA({ data }){
-
+function DotA({ dataset }){
+    console.log(dataset)
+    const data = dataset.data;
     const svgRef = React.createRef();
     const wrapperRef = React.createRef();
     const dimensions = useResizeObserver(wrapperRef);
@@ -72,7 +73,7 @@ function DotA({ data }){
         const boundedWidth = width - margin.left - margin.right,
               boundedHeight = height - margin.top - margin.bottom;
 
-        const toolTip = d3.select(".dot-tooltip");
+        const toolTip = d3.select(`#${data[0]["民主意涵"]}`)
 
         const xScale = d3.scalePoint()
             .domain(data.map(d => d["身份"]))
@@ -143,13 +144,13 @@ function DotA({ data }){
         dot.exit()
         .remove();
                     
-    }, [data, dimensions])
+    }, [dataset, dimensions])
 
     return(
         <div className="wrapper dot-wrapper" ref={wrapperRef} >
             <div className="legend-wrapper" ref={legendRef}></div>
             <div style={{position:"relative"}}>
-                <div className="tool-tip dot-tooltip"></div>
+                <div className="tool-tip dot-tooltip" id={dataset.data[0]["民主意涵"]}></div>
                 <svg ref={svgRef}></svg>
             </div>
         </div>

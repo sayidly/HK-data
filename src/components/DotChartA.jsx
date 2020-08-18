@@ -9,7 +9,7 @@ const DotChartA = (props) =>{
 
     const dotDataGroup = [...props.data.tags]
 
-    const [dotData, setDotData] = useState(props.data.tags[0].data)
+    const [dotData, setDotData] = useState(props.data.tags[0])
     const [curTagIndex, setCurTagIndex] = useState(0);
 
 
@@ -18,7 +18,7 @@ const DotChartA = (props) =>{
       return(
           <button className={`${curTagIndex === props.order ? 'active' : ''}`}
           onClick={() => {
-            setDotData(dotDataGroup[props.order].data)
+            setDotData(dotDataGroup[props.order])
             setCurTagIndex(props.order)
             }}>{`#${props.text}`}
           </button>
@@ -32,7 +32,7 @@ const DotChartA = (props) =>{
 
     const onStepEnter = ({ data}) => {
       setCurTagIndex(data);
-      setDotData(dotDataGroup[data].data)
+      setDotData(dotDataGroup[data])
       // console.log(dotDataGroup[data].data)
     };
 
@@ -48,7 +48,7 @@ const DotChartA = (props) =>{
                   {buttonGroup}
                 </div>
               </div>
-              <DotA data={dotData}/>
+              <DotA dataset={dotData}/>
             </div>
         </div>
         <div className="description">
