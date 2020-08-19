@@ -91,6 +91,7 @@
     padding: 5px 10px;
     border-radius: 20px;
     margin-right: 10px;
+    display: inline-block;
     cursor: pointer;
 
     &.active {
@@ -101,6 +102,7 @@
     @include media(">phone", "<=tablet") {
       font-size: 16px;
       line-height: 28px;
+      margin-bottom: 10px;
       width: fit-content;
     }
   }
@@ -113,6 +115,7 @@
     margin-right: 10px;
     font-size: 16px;
     font-weight: bold;
+    display: inline-block;
 
     @include media(">phone", "<=tablet") {
       font-size: 16px;
