@@ -41,9 +41,7 @@ const DotChartA = (props) =>{
         <div className={`dotchart section ${props.snap}`}>
           <div className="dotchart__container">
               <div className="dotchart__header">
-                <div className="dotchart__header__text__title">
-                      <h1>{props.data.title}</h1>
-                </div>
+                  <h1 className="dotchart__header__title">{props.data.title}</h1>
                 <div className="dotchart__header__buttons">
                   {buttonGroup}
                 </div>
