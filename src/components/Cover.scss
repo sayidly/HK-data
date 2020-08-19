@@ -84,6 +84,12 @@
     flex-wrap: nowrap;
     justify-content: space-between;
 
+    @include media(">phone", "<=tablet") {
+      flex-direction: column-reverse;
+      align-items: center;
+    }
+
+
     &__dropdown_icon {
       width: 64px;
       align-self: center;
@@ -93,6 +99,9 @@
     &__info_icon {
       width: 64px;
       cursor: pointer;
+      @include media(">phone", "<=tablet") {
+        margin-bottom: 20px;
+      }
     }
 
     .bounce {
