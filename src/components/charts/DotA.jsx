@@ -3,7 +3,7 @@ import * as d3 from "d3";
 import useResizeObserver from "./useResizeObserver";
 
 function DotA({ dataset }){
-    console.log(dataset)
+    // console.log(dataset)
     const data = dataset.data;
     const svgRef = React.createRef();
     const wrapperRef = React.createRef();

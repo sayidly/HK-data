@@ -109,10 +109,14 @@
     border: 2px solid black;
   }
 
-  .axis text {
+  .axis text, .label text {
     font-weight: bold;
   }
 
   .axis path {
     stroke-width: 2px;
+  }
+
+  strong {
+    background-image: linear-gradient(120deg, #ea497b 0%, #ea497b 100%)
   }

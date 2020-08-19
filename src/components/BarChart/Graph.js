@@ -12,7 +12,7 @@ function Tooltip (props) {
   }
   const tips = props.labels.map((label, index) => {
     const style = {
-      color: label.color,
+      // color: label.color,
       opacity: props.curIndex === index ? 1 : 0.3
     }
     return (
