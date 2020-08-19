@@ -4,8 +4,6 @@ import './Paragraph.scss';
 
 const Paragraph = (props) => {
 
-  const highlightElements = React.createRef();
-
   const content = props.introContent.content;
   const introColors=props.introColors;
   const sectionClass = props.class;
@@ -22,7 +20,7 @@ const Paragraph = (props) => {
     <div className={`intro ${sectionClass}` }>
       <div className="intro__content">
         {content.map((contentItem, index) =>
-          <p key={index} ref={highlightElements}>{content[index]}</p>
+          <p key={index}>{content[index]}</p>
         )}
       </div>
     </div>

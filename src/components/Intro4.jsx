@@ -22,7 +22,7 @@ const Intro4 = () => {
     highlightColor: "#ea497b"
   }
 
-  const questionList=["未來五年，家庭經濟狀況會變成什麼樣？", "向上流動機會如何？", "工作還穩定嗎？未來想移民嗎？"];
+  const questionList=["未來五年，家庭經濟狀況會變怎樣？", "向上流動機會如何？", "工作還穩定嗎？未來想移民嗎？"];
   const introContent = {
     content: [
       ["攬炒並不單純是一個政治主張，其影響的是市民的經濟利益。這次民調問及市民對於自身及社會未來的經濟預期，也嘗試理解", <strong>不同社會階層的看法</strong>, "。"],
