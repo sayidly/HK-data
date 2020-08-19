@@ -32,8 +32,8 @@ function Tooltip (props) {
 function Graph (props) {
   const { labels, values } = props
   const [curIndex, setCurIndex] = useState(0)
-  const [toolTipTop, setToolTipTop] = useState(0)
-  const [toolTipLeft, setToolTipLeft] = useState(0)
+  const [toolTipTop, setToolTipTop] = useState(-999)
+  const [toolTipLeft, setToolTipLeft] = useState(-999)
   const [isToolTipShow, toggleTooltip] = useState(false)
 
   const items = values.map((value, index) => {

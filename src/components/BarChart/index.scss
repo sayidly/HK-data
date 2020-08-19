@@ -62,6 +62,21 @@
   }
 }
 
+.gradient-lables {
+  margin-bottom: 30px;
+  .lable {
+    margin-right: 0px;
+  }
+  .colors {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 10px;
+  }
+  .label-text {
+    vertical-align: middle;
+  }
+}
+
 .graph {
   display: flex;
   height: 100%;
@@ -73,8 +88,8 @@
     padding: 20px;
     line-height: 30px;
     background-color: rgba(255, 255, 255, 0.9);
-    border: 2px solid #000;
-    font-size: 20px;
+    border: 2px solid black;
+    font-size: 16px;
     font-weight: bold;
   }
 }

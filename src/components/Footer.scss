@@ -1,3 +1,4 @@
+@import '../styles/include-media';
 @import '../styles/variables';
 
 :root{--highlight:#FFE65B}
@@ -42,14 +43,6 @@ footer#footer .footer__copyright p{
 footer#footer .footer__join{
   width:100%;height:100px;z-index:8;background:#111;display:flex;flex-wrap:initial;align-items:center;justify-content:initial;flex-direction:initial;display:-webkit-flex;-webkit-flex-wrap:initial;-webkit-align-items:center;-webkit-justify-content:initial;-webkit-flex-direction:initial;transition-property:transform;transition-duration:.2s;transition-timing-function:ease;-webkit-transition-property:transform;-webkit-transition-duration:.2s;-webkit-transition-timing-function:ease
 }
-@media (max-width: 767px){
-  footer#footer .footer__join{
-    height:75px;transform:translateY(75px)
-  }
-}
-footer#footer .footer__join.active{
-  transform:translateY(0px)
-}
 footer#footer .footer__join .container{
   display:flex;flex-wrap:initial;align-items:center;justify-content:space-between;flex-direction:initial;display:-webkit-flex;-webkit-flex-wrap:initial;-webkit-align-items:center;-webkit-justify-content:space-between;-webkit-flex-direction:initial
 }
@@ -79,7 +72,6 @@ footer#footer .footer__join a:hover{
     width: 100%;
     margin: 0 auto;
     &__container{
-        width: 100%;
         background-color: #282828;
         margin: 0 auto;
         color: $yellow;
@@ -91,6 +83,9 @@ footer#footer .footer__join a:hover{
         &__creators{
             width: 30%;
             margin-bottom: 20px;
+            @include media(">phone", "<=tablet") {
+              width: 80%;
+            }
             &__text{
                 display: flex;
                 // justify-content: space-between;
