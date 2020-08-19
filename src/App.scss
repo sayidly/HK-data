@@ -43,45 +43,6 @@ strong {
   }
 }
 
-// mark {
-//   display: inline-block;
-//   line-height: 0em;
-//   padding-bottom: 0.55em;
-//   color: #fff;
-//   background-color: #C41F1F;
-// }
-
-// .chart {
-//   &__title {
-//     font-size: 40px;
-//     letter-spacing: 0.1em;
-//     width: 80%;
-//     @include media($media-mobile...) {
-//       font-size: 20px;
-//       width: 100%;
-//     }
-//   }
-// }
-
-// .icon {
-//   width: 30px;
-//   height: 30px;
-//   display: inline-block;
-//   background-size: auto 100%;
-//   background-position: center center;
-//   background-repeat: no-repeat;
-//   &.play {
-//     background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg viewBox='0 0 176 205' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='https://www.w3.org/1999/xlink'%3E%3Ctitle%3EPath 6%3C/title%3E%3Cg id='Page-1' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cpath d='M0,10.0296038 L0,194.470396 C-6.42907361e-15,199.993244 4.4771525,204.470396 10,204.470396 C11.7905136,204.470396 13.5481864,203.989656 15.0894579,203.078382 L171.065176,110.857986 C175.819235,108.047156 177.394534,101.914601 174.583704,97.1605421 C173.726057,95.7099724 172.515746,94.4996613 171.065176,93.6420143 L15.0894579,1.42161808 C10.3353987,-1.38921191 4.20284427,0.186086647 1.39201428,4.94014589 C0.480739933,6.48141741 1.55708217e-15,8.23909023 0,10.0296038 Z' id='Path-6' fill='%23ffffff'%3E%3C/path%3E%3C/g%3E%3C/svg%3E");
-//   }
-//   &.pause {
-//     background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg viewBox='0 0 154 187' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='https://www.w3.org/1999/xlink'%3E%3Ctitle%3ECombined Shape%3C/title%3E%3Cg id='Page-1' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cpath d='M41,0.25 C46.5228475,0.25 51,4.7271525 51,10.25 L51,176.25 C51,181.772847 46.5228475,186.25 41,186.25 L10,186.25 C4.4771525,186.25 -1.10000309e-15,181.772847 0,176.25 L0,10.25 C-6.76353751e-16,4.7271525 4.4771525,0.25 10,0.25 L41,0.25 Z M144,0.25 C149.522847,0.25 154,4.7271525 154,10.25 L154,176.25 C154,181.772847 149.522847,186.25 144,186.25 L113,186.25 C107.477153,186.25 103,181.772847 103,176.25 L103,10.25 C103,4.7271525 107.477153,0.25 113,0.25 L144,0.25 Z' id='Combined-Shape' fill='%23ffffff'%3E%3C/path%3E%3C/g%3E%3C/svg%3E");
-//   }
-//   @include media($media-mobile...) {
-//     width: 15px;
-//     height: 15px;
-//   }
-// }
-
 .logo {
   width: 50px;
   height: 50px;
@@ -100,32 +61,3 @@ strong {
     top: 25px;
   }
 }
-
-// a {
-//   color: #fff;
-// }
-
-// .remark {
-//   font-size: 15px;
-//   letter-spacing: 0.1em;
-//   margin-top: 25px;
-//   color: #ccc;
-//   width: 80%;
-//   max-width: 800px;
-//   @include media($media-mobile...) {
-//     font-size: 12px;
-//   }
-// }
-
-// #horiscrollA, #horiscrollB, #circleChart, #chartB, #barChartCWrapper, #barchartD, #barchartE, #barchartF, #linechart {
-//   @include media($media-mobile...) {
-//     display: none;
-//   }
-// }
-
-// #horiscrollC, #horiscrollD, #circleChartMobile, #chartBMobile, #barChartCWrapperMobile, #barchartDMobile, #barchartEMobile, #barchartFMobile, #linechartMobile {
-//   display: none;
-//   @include media($media-mobile...) {
-//     display: inherit;
-//   }
-// }

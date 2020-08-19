@@ -30,7 +30,7 @@ const Modal = (props) => {
           <h5 class="modal__content__title">調查人數：</h5>
           <p class="modal__content__text">1574人</p>
         </div>
-        <div class="modal__content">
+        <div class="modal__content group">
           <h5 class="modal__content__title">人口特徵：</h5>
           <div  class="modal__content__sub">
             <h6 class="modal__content__sub__title">性別：</h6>
@@ -54,6 +54,10 @@ const Modal = (props) => {
               <span>中下層及基層 65.0%</span>
             </p>
           </div>
+        </div>
+        <div class="modal__content modal__desc">
+          <span>為方便分析，「無政治取向」將歸類為「中間派」。</span>
+          <span>數據經四捨五入，總和未必等於100%。</span>
         </div>
       </div>
     )}

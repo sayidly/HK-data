@@ -1,63 +1,78 @@
 @import '../styles/variables';
 
-.popup-content{
-    background: none !important;
-    border: none !important;
-    width: auto !important;
+.popup-content {
+  background: none !important;
+  border: none !important;
+  width: auto !important;
 }
 
 a.close {
-    color: $white;
-    background: $black;
-    font-size: 32px;
-    cursor: pointer;
-    justify-self: end;
-    // padding-right: 15px;
+  color: $white;
+  background: $black;
+  font-size: 32px;
+  cursor: pointer;
+  justify-self: end;
+  // padding-right: 15px;
 }
 
 .modal {
-    box-sizing: border-box;
-    background-color: $black;
-    display: grid;
-    width: 360px;
-    // height: 595px;
-    padding: 0 20px;
-    &__content{
-        color: $yellow;
-        display: flex;
-        &__title,  &__text{
-            font-size: 16px;
-            font-weight: 700;
-            margin: 0;
-            line-height: 30px;
-        }
-        &__sub{
-            display: flex;
-            margin-bottom: 20px;
-            &__title, &__text{
-                font-size: 16px;
-                font-weight: 700;
-                margin: 0;
-                line-height: 30px;
-            }
-            &__title{
-                width: 96px;
-                font-weight: 700;
-            }
-            &__text{
-                padding-left: 12px;
-                display: flex;
-                flex-flow: column wrap;
-            }
-        }
-    }
-}
+  box-sizing: border-box;
+  background-color: $black;
+  display: grid;
+  width: 360px;
+  // height: 595px;
+  padding: 0 20px;
+  padding-bottom: 20px;
 
-.modal__content:last-child{
+  &__content {
+    color: $yellow;
+    display: flex;
+
+    &__title,
+    &__text {
+      font-size: 16px;
+      font-weight: 700;
+      margin: 0;
+      line-height: 30px;
+    }
+
+    &__sub {
+      display: flex;
+      margin-bottom: 20px;
+
+      &__title,
+      &__text {
+        font-size: 16px;
+        font-weight: 700;
+        margin: 0;
+        line-height: 30px;
+      }
+
+      &__title {
+        width: 96px;
+        font-weight: 700;
+      }
+
+      &__text {
+        padding-left: 12px;
+        display: flex;
+        flex-flow: column wrap;
+      }
+    }
+  }
+
+  .group {
     display: flex;
     flex-direction: column;
-}
+  }
 
-.display_contents {
-  display: contents;
+  .display_contents {
+    display: contents;
+  }
+
+  .modal__desc {
+    font-size: 12px;
+    line-height: 1.5;
+    flex-direction: column;
+  }
 }

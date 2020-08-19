@@ -18,6 +18,9 @@ const Cover = () => {
 
   const content = coverContent.content;
 
+  useEffect(() => {
+  });
+
   return (
     <>
       <div className="cover">
@@ -31,7 +34,7 @@ const Cover = () => {
           <div id="scrollContainer" className="scroll_container">
             <div id="coverContent" className="cover__content">
               {content.map((contentItem, index) =>
-                <p className="cover__text__content" key={index} >{content[index]}</p>
+                <p className="cover__text__content" key={index}>{content[index]}</p>
               )}
             </div>
           </div>

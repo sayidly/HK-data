@@ -41,19 +41,7 @@ module.exports = {
             options: {
               limit: 1000,
               outputPath: 'images',
-            }
-          }
-        ],
-      },
-      {
-        test: /\.(csv)$/i,
-        use: [
-          {
-            loader: 'url-loader',
-            options: {
               // name: "[path][name].[ext]",
-              limit: 1000,
-              outputPath: 'libs',
             }
           }
         ],
