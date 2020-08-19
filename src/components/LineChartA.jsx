@@ -1,6 +1,7 @@
 import {hot} from "react-hot-loader";
 import React, { useState } from "react";
 import { Scrollama, Step } from "react-scrollama";
+import { select } from "d3";
 import './Chart.scss'
 import './LineChartA.scss'
 import LineA from "./charts/LineA";
@@ -20,9 +21,9 @@ const LineChartA = (props) =>{
         <div className="linechart section">
           <div className="linechart__container">
               <div className="linechart__header">
-                <div className="linechart__header__text__title">
-                    <h1>{props.data.tags[currentStepIndex].title}</h1>
-                  </div>
+                  <h1 className="linechart__header__title">
+                    {props.data.tags[currentStepIndex].title}
+                  </h1>
               </div>
               <LineA data={lineData}/>
             </div>

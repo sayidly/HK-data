@@ -47,7 +47,7 @@ function LineA({ data }){
             .range([boundedHeight, 0]);
 
         const xAxis = svg.append("g")
-            .attr("class", "x-axis")
+            .attr("class", "axis x-axis")
             .attr("transform", `translate(${margin.left}, ${boundedHeight + margin.top})`)
             .call(d3.axisBottom(xScale).ticks(5).tickSize(0, 0))
             .selectAll("text") 
@@ -55,7 +55,7 @@ function LineA({ data }){
                 .attr("font-size", "16px");
 
         const yAxis = svg.append("g")
-            .attr("class", "y-axis")
+            .attr("class", "axis y-axis")
             .attr("transform", `translate(${margin.left}, ${margin.top})`)
             .call(d3.axisLeft(yScale).ticks(5).tickSize(0, 0))
             .selectAll("text") 
@@ -69,22 +69,9 @@ function LineA({ data }){
                     .text(xText)
                     .attr("text-anchor", "middle")
                     .attr("baseline-shift", "100%");
-        
+
         const yLabel = svg.append("g")
-        .attr("class", "label y-label")
-            .append("text")
-
-        const yTextToList = [...yText];
-
-        yLabel.selectAll("tspan")
-            .data(yTextToList)
-            .enter()
-            .append("tspan")
-                .text(d => d)
-                .attr("x", 0)
-                .attr("dy", "1.2em");
-        const tspanHeight = d3.selectAll("tspan").node().getBoundingClientRect().height * yTextToList.length;
-        yLabel.attr("transform", `translate(${margin.left/2}, ${margin.top + boundedHeight/2 - tspanHeight / 2})`)
+            .attr("class", "label y-label")
 
         const lineGenerator = d3.line()
             .x(d => xScale(+d[`${xText}`]))
@@ -94,7 +81,36 @@ function LineA({ data }){
             .attr("d", lineGenerator)
             .attr("fill", "none")
             .attr("stroke-width", 3);
+
+        var br = navigator.userAgent.toLowerCase(); 
+        if (br.indexOf('safari') != -1) { 
+        if (br.indexOf('chrome') > -1) {
+             // Chrome
+             const yTextToList = [...yText];
+             yLabel
+             .append("text")
+             .selectAll("tspan")
+             .data(yTextToList)
+             .enter()
+                .append("tspan")
+                    .text(d => d)
+                    .attr("x", 0)
+                    .attr("dy", "1.2em");
+        const tspanHeight = d3.selectAll("tspan").node().getBoundingClientRect().height * yTextToList.length;
+        yLabel.attr("transform", `translate(${margin.left/2}, ${margin.top + boundedHeight/2 - tspanHeight / 2})`)
+
+        } else {
+             // Safari
+             yLabel.append("text")
+                .text(yText)
+                .attr("transform", `rotate(-90)`)
+                .attr("text-anchor", "middle")
                 
+        yLabel.attr("transform", `translate(${margin.left/2}, ${margin.top + boundedHeight/2})`)
+
+        }
+        }
+        
 
     }, [data, dimensions])
 
