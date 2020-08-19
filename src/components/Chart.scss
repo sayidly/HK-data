@@ -1,3 +1,5 @@
+@import '../styles/include-media';
+
 .dotchart, .linechart {
     position: sticky;
     top: 0;
@@ -53,61 +55,39 @@
     }
 }
 
-.wrapper {
-  position: relative;
-  align-self: center;
-  width: 100%;
-  height: 70vh;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.legend-wrapper {
-    box-sizing: border-box;
-    padding-bottom: 20px;
+.line001, .dot001{
+  .wrapper {
+    position: relative;
+    align-self: center;
     width: 100%;
-    flex-flow: wrap;
-}
-
-.legend-wrapper, .legend {
-  display: flex;
-}
-
-.legend {
-  margin-right: 15px;
-  margin-bottom: 8px;
-  align-items: center;
-}
-
-.legend p {
-    margin: 0 0 0 8px;
-    width: max-content;
-    font-weight: bold;
-}
-
-.tool-tip{
-    position: absolute;
-    top:0;
-    left:0;
-    color: #DDD5AC;
-    padding: 0.3% 0.6%;
-}
-
-.description {
-  margin-left: 0.8rem;
-  overflow: auto;
-  z-index: 1000;
-}
-
-.text-block {
-  box-sizing: border-box;
-  margin-bottom: 35rem;
-  width: 15%;
-  padding: 1.2rem 0.5rem;
-  line-height: 1.6;
-  border: 2px solid black;
-  font-size: 16px;
-}
+    height: 70vh;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .legend-wrapper {
+      box-sizing: border-box;
+      padding-bottom: 20px;
+      width: 100%;
+      flex-flow: wrap;
+  }
+  
+  .legend-wrapper, .legend {
+    display: flex;
+  }
+  
+  .legend {
+    margin-right: 15px;
+    margin-bottom: 8px;
+    align-items: center;
+  }
+  
+  .legend p {
+      margin: 0 0 0 8px;
+      width: max-content;
+      font-weight: bold;
+  }
+  
   .tool-tip{
       position: absolute;
       top:0;
@@ -115,17 +95,53 @@
       color: #DDD5AC;
       padding: 0.3% 0.6%;
   }
-
-  .description {
-    margin-left: 0.8rem;
-    overflow: auto;
+  
+  
+  .text-block {
+    box-sizing: border-box;
+    margin-bottom: 35rem;
+    width: 15%;
+    padding: 1.2rem 0.5rem;
+    line-height: 1.6;
+    border: 2px solid black;
+    font-size: 16px;
     z-index: 1000;
+    @include media(">phone", "<=tablet") {
+      width: 80%;
+    }
   }
 
-.axis text, .label text {
-  font-weight: bold;
+    .tool-tip{
+        position: absolute;
+        top:0;
+        left:0;
+        color: #DDD5AC;
+        padding: 0.3% 0.6%;
+    }
+  
+    .description {
+      margin-left: 0.8rem;
+      overflow: auto;
+      z-index: 1000;
+      @include media(">phone", "<=tablet") {
+        display: grid;
+        justify-items: center;
+      }
+    }
+  
+  .axis text, .label text {
+    font-weight: bold;
+  }
+  
+  .axis path {
+    stroke-width: 2px;
+  }
 }
 
-.axis path {
-  stroke-width: 2px;
+.dot001 .text-block{
+  background-color: #ddd5ac;
+}
+
+.line001 .text-block{
+    background-color: #E0E0E0;
 }
