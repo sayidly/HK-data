@@ -13,5 +13,10 @@ module.exports = merge(common, { // 将webpack.common.js合并到当前文件
       new PurifyCssWebpack({
             paths: glob.sync(path.join(__dirname, 'src/*.html')) // 同步扫描所有html文件中所引用的css
       })
-    ]
+    ],
+    optimization: {
+      splitChunks: {
+        chunks: 'all'
+      }
+    }
 })

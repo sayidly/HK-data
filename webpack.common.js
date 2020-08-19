@@ -56,6 +56,7 @@ module.exports = {
     }),
     new MiniCssExtractPlugin({
       filename: '[name].css',
+      chunkFilename: '[id].css'
     }),
     new webpack.HotModuleReplacementPlugin() // 热更新插件
   ]
