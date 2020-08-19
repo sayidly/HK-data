@@ -7,6 +7,12 @@ import Paragraph from './Paragraph';
 import Questions from './Questions';
 import BarChart from './BarChart'
 
+import {
+  econ1,
+  econ2,
+  econ3,
+  econ4
+} from '../libs/barChartData.json'
 
 const Intro4 = () => {
 
@@ -28,6 +34,10 @@ const Intro4 = () => {
     <>
       <Questions class="intro4" questionList={questionList} bgImage={bgImage} />
       <Paragraph class="intro4" introContent={introContent} />
+      <BarChart class="intro4" data={econ1} />
+      <BarChart class="intro4" data={econ2} />
+      <BarChart class="intro4" data={econ3} />
+      <BarChart class="intro4" data={econ4} />
     </>
   )
 }

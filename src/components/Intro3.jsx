@@ -5,7 +5,11 @@ import './Intro.scss';
 
 import Paragraph from './Paragraph';
 import Questions from './Questions';
-import BarChart from './BarChart'
+import BarChart from './BarChart';
+
+import {
+  hkimportance1
+} from '../libs/barChartData.json'
 
 
 const Intro3 = () => {
@@ -27,6 +31,7 @@ const Intro3 = () => {
     <>
       <Questions class="intro3" questionList={questionList} bgImage={bgImage}/>
       <Paragraph class="intro3" introContent={introContent} />
+      <BarChart class="intro3" data={hkimportance1} />
     </>
   )
 }
