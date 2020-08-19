@@ -10,7 +10,9 @@ import DotChartA from './DotChartA';
 
 import {
   independence1,
-  independence2
+  independence2,
+  independence3,
+  independence4
 } from '../libs/barChartData.json'
 
 import {
@@ -42,6 +44,8 @@ const Intro1 = () => {
       <Paragraph class="intro1" introContent={introContent} />
       <BarChart class="intro1" data={independence1} />
       <BarChart class="intro1" data={independence2}/>
+      <BarChart class="intro1" data={independence3}/>
+      <BarChart class="intro1" data={independence4}/>
       <DotChartA data={democraticAttr1}/>
       <DotChartA data={democraticAttr2}/>
       <DotChartA data={democraticAttr3}/>
