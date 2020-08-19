@@ -9,7 +9,7 @@ import Modal from './Modal';
 const Cover = () => {
 
   const coverContent = {
-    subtitle: ["● 獨家數據"],
+    subtitle: ["獨家數據"],
     title: ["香港人、本土派，他們如何理解此城未來？"],
     content: [
       ["經過反修例運動，香港今年的政治氛圍走入低谷——7月人大迅速通過及出台港區國安法，特首在月底以疫情嚴重為由押後立法會選舉。面對這場空前的危機，北京與香港之間缺乏溝通、互不理解，通常被認為是重要病因之一。但到底，除了選票上的民意表達之外，香港的普羅大眾在想什麼？他們在乎的和憂慮的是什麼？這一年多，許多港人的思想和身份認同都有變，但人們往往只見碎片，不見全景。"],
@@ -28,7 +28,7 @@ const Cover = () => {
         <img src={bgImage} className="cover__bg" alt="bg"/>
         <div className="cover__text">
           <div className="cover__title">
-            <h1 className="cover__text__subtitle">{coverContent.subtitle}</h1>
+            <h1 className="cover__text__subtitle"><span className="cover__text__subtitle__circle">● </span><span>{coverContent.subtitle}</span></h1>
             <h1 className="cover__text__title">{coverContent.title}</h1>
           </div>
           <div id="scrollContainer" className="scroll_container">

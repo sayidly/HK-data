@@ -8,7 +8,9 @@ import Questions from './Questions';
 import BarChart from './BarChart';
 
 import {
-  hkimportance1
+  hkimportance1,
+  hkimportance2,
+  hkimportance3
 } from '../libs/barChartData.json'
 
 
@@ -32,6 +34,8 @@ const Intro3 = () => {
       <Questions class="intro3" questionList={questionList} bgImage={bgImage}/>
       <Paragraph class="intro3" introContent={introContent} />
       <BarChart class="intro3" data={hkimportance1} />
+      <BarChart class="intro3" data={hkimportance2} />
+      <BarChart class="intro3" data={hkimportance3} />
     </>
   )
 }
