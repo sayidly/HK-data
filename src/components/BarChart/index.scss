@@ -5,12 +5,15 @@
   position: sticky;
   top: 0;
   margin: 0 auto;
+
   .title {
     position: relative;
+
     @include media(">phone", "<=tablet") {
       font-size: 1.2em;
       margin-bottom: 20px;
     }
+
     &:before {
       content: '';
       position: absolute;
@@ -20,8 +23,9 @@
       height: 40px;
       border-radius: 50%;
       background-color: black;
+
       @include media(">phone", "<=tablet") {
-        left: -40px;
+        left: -30px;
         width: 20px;
         height: 20px;
       }
@@ -29,18 +33,22 @@
     }
   }
 }
+
 .chart {
   height: 55vh;
   display: flex;
   flex-direction: column;
+
   .chart-item {
     position: relative;
     flex: 1;
     margin-bottom: 10px;
+
     @include media(">phone", "<=tablet") {
       margin-bottom: 0;
       margin-top: 40px;
     }
+
     .item-title {
       font-size: 18px;
       font-weight: bold;
@@ -50,6 +58,7 @@
       transform: translateY(-50%);
       right: calc(100% + 20px);
       width: 200px;
+
       @include media(">phone", "<=tablet") {
         font-size: 14px;
         top: -24px;
@@ -60,6 +69,7 @@
       }
     }
   }
+
   @include media(">phone", "<=tablet") {
     height: 60vh;
   }
@@ -67,11 +77,13 @@
 
 .tags {
   margin-bottom: 20px;
+
   @include media(">phone", "<=tablet") {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
   }
+
   .tag {
     font-size: 16px;
     font-weight: bold;
@@ -80,10 +92,12 @@
     border-radius: 20px;
     margin-right: 10px;
     cursor: pointer;
+
     &.active {
       color: #FFF;
       background-color: #1A1A1A;
     }
+
     @include media(">phone", "<=tablet") {
       font-size: 16px;
       line-height: 28px;
@@ -94,10 +108,12 @@
 
 .lables {
   margin-bottom: 30px;
+
   .lable {
     margin-right: 10px;
     font-size: 16px;
     font-weight: bold;
+
     @include media(">phone", "<=tablet") {
       font-size: 16px;
     }
@@ -106,14 +122,17 @@
 
 .gradient-lables {
   margin-bottom: 30px;
+
   .lable {
     margin-right: 0px;
   }
+
   .colors {
     display: inline-block;
     vertical-align: middle;
     margin: 0 10px;
   }
+
   .label-text {
     vertical-align: middle;
   }
@@ -122,10 +141,12 @@
 .graph {
   display: flex;
   height: 100%;
+
   .graph-item {
     display: inline-block;
     height: 100%;
   }
+
   .tooltip {
     padding: 20px;
     line-height: 30px;
@@ -150,6 +171,7 @@
   padding: 1.2rem 0.5rem;
   line-height: 1.6;
   z-index: 9999;
+
   @include media(">phone", "<=tablet") {
     width: 80%;
   }
@@ -159,6 +181,7 @@
   margin-left: 0.8rem;
   overflow: auto;
   z-index: 1000;
+
   @include media(">phone", "<=tablet") {
     display: grid;
     justify-items: center;
