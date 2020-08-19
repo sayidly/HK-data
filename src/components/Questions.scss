@@ -1,4 +1,5 @@
-@import '../styles/variables';
+@import '../Styles/include-media';
+@import '../Styles/variables';
 
 .question {
   display: flex;
@@ -16,6 +17,10 @@
     margin-right: auto;
     text-align: center;
     z-index: 1000;
+    @include media(">phone", "<=tablet") {
+      font-size: 48px;
+      width: 80%;
+    }
   }
 
   .background {

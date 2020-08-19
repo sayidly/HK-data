@@ -1,3 +1,4 @@
+@import '../styles/include-media';
 @import '../styles/variables';
 
 .cover {
@@ -8,6 +9,9 @@
   box-sizing: border-box;
   background-color: $yellow;
   position: relative;
+  @include media(">phone", "<=tablet") {
+    padding: 25px;
+  }
 
   &__text {
     width: 60%;
@@ -15,6 +19,9 @@
     margin-left: auto;
     margin-right: auto;
     z-index: 1000;
+    @include media(">phone", "<=tablet") {
+      width: 100%;
+    }
 
     &__subtitle {
       display:flex;
@@ -25,6 +32,12 @@
       color: $blue;
       &__circle {
         font-size: 95px;
+        @include media(">phone", "<=tablet") {
+          font-size: 18px;
+        }
+      }
+      @include media(">phone", "<=tablet") {
+        font-size: 18px;
       }
     }
 
@@ -36,12 +49,20 @@
       margin-top: .2em;
       margin-bottom: .4em;
       color: $blue;
+      @include media(">phone", "<=tablet") {
+        font-size: 24px;
+        letter-spacing: -1px;
+      }
     }
 
     &__content {
       font-size: 16px;
       line-height: 1.6;
       color: black;
+      @include media(">phone", "<=tablet") {
+        font-size: 15px;
+        line-height: 1.4;
+      }
     }
   }
 

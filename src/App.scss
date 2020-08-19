@@ -24,7 +24,6 @@
   box-sizing: border-box;
   @include media(">phone", "<=tablet") {
     padding: 25px;
-    margin: 40px 0;
   }
 }
 
