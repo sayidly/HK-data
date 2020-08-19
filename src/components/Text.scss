@@ -23,6 +23,7 @@
   &__content {
     font-size: 18px;
     line-height: 1.6;
+    font-weight: 700;
     margin-left: auto;
     letter-spacing: 0.1em;
     @include media(">phone", "<=tablet") {
