@@ -5,8 +5,12 @@ import './Intro.scss';
 
 import Paragraph from './Paragraph';
 import Questions from './Questions';
-import BarChart from './BarChart'
+import BarChart from './BarChart';
 
+import {
+  burn1,
+  burn2
+} from '../libs/barChartData.json'
 
 const Intro2 = () => {
 
@@ -27,6 +31,8 @@ const Intro2 = () => {
     <>
       <Questions class="intro2" questionList={questionList} bgImage={bgImage}/>
       <Paragraph class="intro2" introContent={introContent}/>
+      <BarChart class="intro2" data={burn1} />
+      <BarChart class="intro2" data={burn2}/>
     </>
   )
 }
