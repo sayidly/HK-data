@@ -46,7 +46,7 @@
       width: 200px;
       @include media(">phone", "<=tablet") {
         font-size: 14px;
-        top: -20%;
+        top: -24px;
         transform: none;
         right: 0;
         left: 0;
@@ -130,6 +130,20 @@
   width: 15%;
   padding: 1.2rem 0.5rem;
   line-height: 1.6;
+  z-index: 9999;
+  @include media(">phone", "<=tablet") {
+    width: 80%;
+  }
+}
+
+.description {
+  margin-left: 0.8rem;
+  overflow: auto;
+  z-index: 1000;
+  @include media(">phone", "<=tablet") {
+    display: grid;
+    justify-items: center;
+  }
 }
 
 // .centered {
