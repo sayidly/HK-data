@@ -62,7 +62,7 @@
 .tags {
   margin-bottom: 20px;
   .tag {
-    font-size: 20px;
+    font-size: 16px;
     font-weight: bold;
     color: #9A9A9A;
     padding: 5px 10px;
@@ -84,6 +84,8 @@
   margin-bottom: 30px;
   .lable {
     margin-right: 10px;
+    font-size: 16px;
+    font-weight: bold;
     @include media(">phone", "<=tablet") {
       font-size: 14px;
     }
