@@ -64,8 +64,8 @@ function BarChart (props) {
   };
 
   return (
-    <div>
-      <div className={`bar-chart section ${props.snap}`}>
+    <div className={`${props.class}`}>
+      <div className="bar-chart section">
         <h1 className="title">{props.data.title}</h1>
         {tags}
         {labels}

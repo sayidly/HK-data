@@ -5,7 +5,6 @@ import './Questions.scss';
 const Questions = (props) => {
   const questionList = props.questionList;
   const bgImage = props.bgImage;
-  const sectionClass = props.class;
 
   const [text, setText] = useState(questionList[0]);
 
@@ -18,7 +17,7 @@ const Questions = (props) => {
   };
 
   return (
-    <div className={`question ${sectionClass}` }>
+    <div className={`question ${props.class}` }>
       <div className="background" style={{ position: 'sticky', top: 0}}>
         <img src={bgImage} className="question__bg" alt="bg"/>
       </div>

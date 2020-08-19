@@ -32,8 +32,8 @@ const Intro1 = () => {
     <>
       <Questions class="intro1" questionList={questionList} bgImage={bgImage} />
       <Paragraph class="intro1" introContent={introContent} />
-      <BarChart data={independence1} />
-      <BarChart data={independence2}/>
+      <BarChart class="intro1" data={independence1} />
+      <BarChart class="intro1" data={independence2}/>
     </>
   )
 }
