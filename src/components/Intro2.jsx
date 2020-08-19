@@ -32,9 +32,9 @@ const Intro2 = () => {
     <>
       <Questions class="intro2" questionList={questionList} bgImage={bgImage}/>
       <Paragraph class="intro2" introContent={introContent}/>
-      <BarChart class="intro2" data={burn1} />
-      <BarChart class="intro2" data={burn2}/>
-      <BarChart class="intro2" data={burn3}/>
+      <BarChart class="intro2" labelsMode="gradient" data={burn1} />
+      <BarChart class="intro2" labelsMode="gradient" data={burn2}/>
+      <BarChart class="intro2" labelsMode="gradient" data={burn3}/>
     </>
   )
 }

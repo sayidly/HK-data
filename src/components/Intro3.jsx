@@ -33,9 +33,9 @@ const Intro3 = () => {
     <>
       <Questions class="intro3" questionList={questionList} bgImage={bgImage}/>
       <Paragraph class="intro3" introContent={introContent} />
-      <BarChart class="intro3" data={hkimportance1} />
-      <BarChart class="intro3" data={hkimportance2} />
-      <BarChart class="intro3" data={hkimportance3} />
+      <BarChart class="intro3" labelsMode="gradient" data={hkimportance1} />
+      <BarChart class="intro3" labelsMode="gradient" data={hkimportance2} />
+      <BarChart class="intro3" labelsMode="gradient" data={hkimportance3} />
     </>
   )
 }
