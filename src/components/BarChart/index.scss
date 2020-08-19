@@ -1,3 +1,5 @@
+@import '../../styles/include-media';
+
 .bar-chart {
   // width: 40vw;
   position: sticky;
@@ -5,6 +7,10 @@
   margin: 0 auto;
   .title {
     position: relative;
+    @include media(">phone", "<=tablet") {
+      font-size: 1.2em;
+      margin-bottom: 20px;
+    }
     &:before {
       content: '';
       position: absolute;
@@ -25,6 +31,10 @@
     position: relative;
     flex: 1;
     margin-bottom: 10px;
+    @include media(">phone", "<=tablet") {
+      margin-bottom: 0;
+      margin-top: 40px;
+    }
     .item-title {
       font-size: 18px;
       font-weight: bold;
@@ -34,7 +44,18 @@
       transform: translateY(-50%);
       right: calc(100% + 20px);
       width: 200px;
+      @include media(">phone", "<=tablet") {
+        font-size: 14px;
+        top: -20%;
+        transform: none;
+        right: 0;
+        left: 0;
+        text-align: left;
+      }
     }
+  }
+  @include media(">phone", "<=tablet") {
+    height: 65vh;
   }
 }
 
@@ -52,6 +73,10 @@
       color: #FFF;
       background-color: #1A1A1A;
     }
+    @include media(">phone", "<=tablet") {
+      font-size: 16px;
+      line-height: 28px;
+    }
   }
 }
 
@@ -61,6 +86,9 @@
     margin-right: 10px;
     font-size: 16px;
     font-weight: bold;
+    @include media(">phone", "<=tablet") {
+      font-size: 14px;
+    }
   }
 }
 
