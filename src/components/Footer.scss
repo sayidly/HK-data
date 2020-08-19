@@ -2,9 +2,9 @@
 
 :root{--highlight:#FFE65B}
 footer#footer{
-  padding:20px 0 60px;
+  padding:20px 0 20px;
   font-size:16px;
-  background-color:#000;
+  // background-color:#000;
   color:#fff
 }
 @media (max-width: 992px){
@@ -76,10 +76,13 @@ footer#footer .footer__join a:hover{
 .footer{
     box-sizing: border-box;
     height: 40vh;
-    background-color: #282828;
-    width: 98%;
+    background-color: $yellow;
+    width: 100%;
     margin: 0 auto;
     &__container{
+        width: 98%;
+        background-color: #282828;
+        margin: 0 auto;
         color: $yellow;
         display: flex;
         flex-direction: column;
@@ -88,6 +91,7 @@ footer#footer .footer__join a:hover{
         justify-content: center;
         &__creators{
             width: 20%;
+            margin-bottom: 20px;
             &__text{
                 display: flex;
                 // justify-content: space-between;
