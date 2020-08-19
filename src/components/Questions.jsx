@@ -6,10 +6,11 @@ const Questions = (props) => {
   const questionList = props.questionList;
   const bgImage = props.bgImage;
 
-  const [text, setText] = useState(questionList[0]);
+  const [currentStepIndex, setCurrentStepIndex] = useState(0);
 
   const onStepEnter = ({ data }) => {
-    setText(data);
+    console.log(data);
+    setCurrentStepIndex(data);
   };
 
   const onStepExit = ({ element }) => {
@@ -21,14 +22,14 @@ const Questions = (props) => {
       <div className="background" style={{ position: 'sticky', top: 0}}>
         <img src={bgImage} className="question__bg" alt="bg"/>
       </div>
-      <Scrollama offset="0.8" onStepEnter={onStepEnter} onStepExit={onStepExit} >
+      <Scrollama offset="0.5" onStepEnter={onStepEnter} onStepExit={onStepExit} >
         {questionList.map((questionItem, stepIndex) => (
-          <Step data={questionItem} key={stepIndex}>
+          <Step data={stepIndex} key={stepIndex}>
             <div className="question__title"
               style={{
                 // color: `${introColors.textColor}`,
                 marginBottom: '50vh',
-                opacity: text === questionItem ? 1 : 0.2,
+                opacity: currentStepIndex === stepIndex ? 1 : 0.2,
               }}
             >
               {questionList[stepIndex]}
