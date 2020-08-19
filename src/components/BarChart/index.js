@@ -122,6 +122,7 @@ function BarChart (props) {
                   minHeight: "5rem",
                   border: props.data.tags[curTagIndex].texts === undefined ? "none" : "2px solid black",
                   opacity: curTagIndex === stepIndex ? 1 : 0,
+                  backgroundColor: props.data.tags[curTagIndex].texts === undefined ? "transparent" : "#e0e0e0"
                 }}
               >
                 {props.data.tags[curTagIndex].texts}

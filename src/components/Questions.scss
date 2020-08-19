@@ -18,7 +18,7 @@
     text-align: center;
     z-index: 1000;
     @include media(">phone", "<=tablet") {
-      font-size: 48px;
+      font-size: 1.2em;
       width: 80%;
     }
   }
