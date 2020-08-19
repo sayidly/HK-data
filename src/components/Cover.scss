@@ -17,10 +17,15 @@
     z-index: 1000;
 
     &__subtitle {
+      display:flex;
+      align-items:center;
       font-size: 36px;
       font-weight: 900;
       margin-bottom: 0;
       color: $blue;
+      &__circle {
+        font-size: 95px;
+      }
     }
 
     &__title {

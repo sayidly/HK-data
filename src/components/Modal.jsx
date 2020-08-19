@@ -42,16 +42,16 @@ const Modal = (props) => {
           <div class="modal__content__sub">
             <h6 class="modal__content__sub__title">教育程度：</h6>
             <p class="modal__content__sub__text">
-              <span>沒有大專學歷 65.5%</span>
-              <span>有大專學歷 34.2%</span>
+              <span>沒有大專學歷 65.7%</span>
+              <span>有大專學歷 34.3%</span>
             </p>
           </div>
           <div class="modal__content__sub">
             <h6 class="modal__content__sub__title">社會階層：</h6>
             <p class="modal__content__sub__text">
               <span>上層及中上層 4.5%</span>
-              <span>中層 29.4%</span>
-              <span>中下層及基層 65.0%</span>
+              <span>中層 29.7%</span>
+              <span>中下層及基層 65.7%</span>
             </p>
           </div>
         </div>
