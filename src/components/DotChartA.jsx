@@ -60,6 +60,7 @@ const DotChartA = (props) =>{
                   minHeight: "5rem",
                   border: curTagIndex === (tabData.length - 1) ? "2px solid black" : "none",
                   opacity: curTagIndex === stepIndex ? 1 : 0,
+                  backgroundColor: curTagIndex === (tabData.length - 1) ? "#ddd5ac" : "transparent"
                 }}
               >
                 {curTagIndex === (tabData.length - 1) ? props.data.texts : ""}
