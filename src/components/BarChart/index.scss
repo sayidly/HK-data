@@ -68,9 +68,9 @@
 .tags {
   margin-bottom: 20px;
   @include media(">phone", "<=tablet") {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    // display: grid;
+    // grid-template-columns: 1fr 1fr;
+    // grid-template-rows: 1fr 1fr;
   }
   .tag {
     font-size: 16px;
@@ -116,6 +116,8 @@
   }
   .label-text {
     vertical-align: middle;
+    font-size: 16px;
+    font-weight: bold;
   }
 }
 
@@ -138,8 +140,8 @@
 
 .description {
   @include media(">phone", "<=tablet") {
-    display: grid;
-    justify-items: center;
+    // display: grid;
+    // justify-items: center;
   }
 }
 
@@ -149,6 +151,7 @@
   width: 15%;
   padding: 1.2rem 0.5rem;
   line-height: 1.6;
+  font-size: 16px;
   z-index: 9999;
   @include media(">phone", "<=tablet") {
     width: 80%;
@@ -160,8 +163,6 @@
   overflow: auto;
   z-index: 1000;
   @include media(">phone", "<=tablet") {
-    display: grid;
-    justify-items: center;
   }
 }
 

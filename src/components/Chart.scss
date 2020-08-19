@@ -20,13 +20,13 @@
             justify-content: space-between;
             margin-bottom: 20px;
             button {
-                font-size: 20px;
+                font-size: 16px;
                 font-weight: bold;
-                color: #1B492E;
                 padding: 5px 10px;
                 border-radius: 20px;
                 border-style: none;
                 margin-right: 10px;
+                color: #9A9A9A;
                 cursor: pointer;
                 @include media(">phone", "<=tablet") {
                   font-size: 16px;
@@ -34,7 +34,7 @@
             }
             button.active {
                 color: #FFF;
-                background-color: #1B492E;
+                background-color: #1e663b;
             }
           }
           &__title {
