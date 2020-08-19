@@ -1,0 +1,79 @@
+/*! 版权所有，翻版必究 */
+@import url(https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;
+
+body,html {
+  height: 100%;
+  background-color: #e0e0e0;
+  color: #000;
+  font-family: "Helvetica Neue", "Helvetica", 'Noto Sans TC', "PingFang SC", "Lantinghei SC", "Arial", sans-serif;
+}
+
+#root {
+  height: 100%;
+}
+
+strong {
+  background-image: linear-gradient(120deg, #2b50d6 0%, #2b50d6 100%);
+  background-repeat: no-repeat;
+  background-size: 100% .6em;
+  background-position: 50% 88%;
+  transition: background-size 0.25s ease-in;
+}
+
+strong:hover {
+  background-size: 100% 100%;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+
+  5.55556% {
+    transform: translateY(0);
+  }
+
+  11.11111% {
+    transform: translateY(0);
+  }
+
+  22.22222% {
+    transform: translateY(-15px);
+  }
+
+  27.77778% {
+    transform: translateY(0);
+  }
+
+  33.33333% {
+    transform: translateY(-15px);
+  }
+
+  44.44444% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.description {
+  margin-left: 0.8rem;
+  overflow: auto;
+  z-index: 1000;
+}
+
+:root {
+  --highlight: #FFE65B;
+}
+
+/* index.css */
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+/*# sourceMappingURL=main.css.map*/
