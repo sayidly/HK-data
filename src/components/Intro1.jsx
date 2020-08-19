@@ -42,10 +42,10 @@ const Intro1 = () => {
     <>
       <Questions class="intro1" questionList={questionList} bgImage={bgImage} />
       <Paragraph class="intro1" introContent={introContent} />
-      <BarChart class="intro1" data={independence1} />
-      <BarChart class="intro1" data={independence2}/>
-      <BarChart class="intro1" data={independence3}/>
-      <BarChart class="intro1" data={independence4}/>
+      <BarChart class="intro1" labelsMode="gradient" data={independence1} />
+      <BarChart class="intro1" labelsMode="gradient" data={independence2}/>
+      <BarChart class="intro1" labelsMode="gradient" data={independence3}/>
+      <BarChart class="intro1" labelsMode="gradient" data={independence4}/>
       <DotChartA data={democraticAttr1}/>
       <DotChartA data={democraticAttr2}/>
       <DotChartA data={democraticAttr3}/>

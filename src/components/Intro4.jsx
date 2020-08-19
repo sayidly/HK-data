@@ -36,7 +36,7 @@ const Intro4 = () => {
       <Paragraph class="intro4" introContent={introContent} />
       <BarChart class="intro4" data={econ1} />
       <BarChart class="intro4" data={econ2} />
-      <BarChart class="intro4" data={econ3} />
+      <BarChart class="intro4" labelsMode="gradient" data={econ3} />
       <BarChart class="intro4" data={econ4} />
     </>
   )
