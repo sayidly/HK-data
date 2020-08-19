@@ -13,12 +13,12 @@ const More = (props) => {
       url: "https://theinitium.com/article/20200518-opinion-hk-political-economical-situation/"
     },
     {
-      title: "梁俊彥：香港民主派35+初選結果的三重解讀",
-      url: "https://theinitium.com/article/20200715-opinion-hk-primary-turnout/"
+      title: "香港重傷：誰能接住經歷「戰爭」的人們？",
+      url: "https://theinitium.com/article/20200514-hongkong-social-trauma-youth-anti-extradition-one-year/"
     },
     {
-      title: "葉健民：未來一年，北京剷除香港異見力量的收成期",
-      url: "https://theinitium.com/article/20200807-opinion-hk-situation-bj-and-globe/"
+      title: "香港的第二次國際關鍵時刻？中美談判桌上的攬炒博弈戰",
+      url: "https://theinitium.com/article/20200630-hongkong-us-china-international-lobbying-national-security-law/"
     },
     {
       title: "重磅專題：大檢控，香港人所經歷的拘捕和審判",
@@ -30,7 +30,7 @@ const More = (props) => {
     <div className={`${props.class}`}>
       <div className="container">
         <div className="title">
-          <strong>延伸阅读</strong>
+          <strong>延伸閱讀：</strong>
         </div>
         <ol className="articles">
           {moreArticle.map((contentItem, index) =>
