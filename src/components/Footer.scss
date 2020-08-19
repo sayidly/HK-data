@@ -40,7 +40,7 @@ footer#footer .footer__copyright p{
   margin:0
 }
 footer#footer .footer__join{
-  width:100%;height:100px;position:fixed;bottom:0;left:0;z-index:8;background:#111;transform:translateY(100px);display:flex;flex-wrap:initial;align-items:center;justify-content:initial;flex-direction:initial;display:-webkit-flex;-webkit-flex-wrap:initial;-webkit-align-items:center;-webkit-justify-content:initial;-webkit-flex-direction:initial;transition-property:transform;transition-duration:.2s;transition-timing-function:ease;-webkit-transition-property:transform;-webkit-transition-duration:.2s;-webkit-transition-timing-function:ease
+  width:100%;height:100px;z-index:8;background:#111;display:flex;flex-wrap:initial;align-items:center;justify-content:initial;flex-direction:initial;display:-webkit-flex;-webkit-flex-wrap:initial;-webkit-align-items:center;-webkit-justify-content:initial;-webkit-flex-direction:initial;transition-property:transform;transition-duration:.2s;transition-timing-function:ease;-webkit-transition-property:transform;-webkit-transition-duration:.2s;-webkit-transition-timing-function:ease
 }
 @media (max-width: 767px){
   footer#footer .footer__join{
@@ -89,17 +89,17 @@ footer#footer .footer__join a:hover{
         height: 100%;
         justify-content: center;
         &__creators{
-            width: 20%;
+            width: 30%;
             margin-bottom: 20px;
             &__text{
                 display: flex;
                 // justify-content: space-between;
                 &__role {
-                    width: 40%;
+                    width: 30%;
                     font-weight: 600;
                 }
                 &__name {
-                    width: 60%;
+                    width: 70%;
                 }
                 &__copyright{
                     text-align: center;

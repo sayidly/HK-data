@@ -30,7 +30,7 @@
             button.active {
                 color: #FFF;
                 background-color: #1B492E;
-            }            
+            }
           }
           &__title {
                 color: #222;
@@ -51,8 +51,6 @@
 
 
     }
-    
-    
 }
 
 .wrapper {
@@ -93,7 +91,6 @@
     left:0;
     color: #DDD5AC;
     padding: 0.3% 0.6%;
-    border: 2px solid black;
 }
 
 .description {
@@ -111,6 +108,19 @@
   border: 2px solid black;
   font-size: 16px;
 }
+  .tool-tip{
+      position: absolute;
+      top:0;
+      left:0;
+      color: #DDD5AC;
+      padding: 0.3% 0.6%;
+  }
+
+  .description {
+    margin-left: 0.8rem;
+    overflow: auto;
+    z-index: 1000;
+  }
 
 .axis text, .label text {
   font-weight: bold;
@@ -119,5 +129,4 @@
 .axis path {
   stroke-width: 2px;
 }
-
 

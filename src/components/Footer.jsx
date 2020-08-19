@@ -4,23 +4,23 @@ import "./Footer.scss";
 const Footer = () => {
 
   useEffect(() => {
-    window.onload=function(){
-      var o=document.querySelectorAll(".footer__join");
-      //   window.onscroll=function(n){
-      //     window.innerHeight+window.scrollY>=document.body.offsetHeight?o[0].classList.add("active"):o[0].classList.remove("active")
-      //   }
+    // window.onload=function(){
+    //   var o=document.querySelectorAll(".footer__join");
+    //   window.onscroll=function(n){
+    //     window.innerHeight+window.scrollY>=document.body.offsetHeight?o[0].classList.add("active"):o[0].classList.remove("active")
+    //   }
 
-      var lastScrollTop = 0;
-      window.addEventListener("scroll", function(){
-        var st = window.pageYOffset || document.documentElement.scrollTop;
-        if (st > lastScrollTop){
-          o[0].classList.remove("active")
-        } else {
-          o[0].classList.add("active")
-        }
-        lastScrollTop = st <= 0 ? 0 : st;
-      }, false);
-    }
+    //   var lastScrollTop = 0;
+    //   window.addEventListener("scroll", function(){
+    //     var st = window.pageYOffset || document.documentElement.scrollTop;
+    //     if (st > lastScrollTop){
+    //       o[0].classList.remove("active")
+    //     } else {
+    //       o[0].classList.add("active")
+    //     }
+    //     lastScrollTop = st <= 0 ? 0 : st;
+    //   }, false);
+    // }
   })
 
 
@@ -30,7 +30,7 @@ const Footer = () => {
         <div className="footer__container__creators">
           <p className="footer__container__creators__text">
             <span className="footer__container__creators__text__role">調查研究：</span>
-            <span className="footer__container__creators__text__name">Francis</span>
+            <span className="footer__container__creators__text__name">李立峯、鄭煒、鄧鍵一；<br/>香港中文大學傳播與民意調查中心</span>
           </p>
           <p className="footer__container__creators__text">
             <span className="footer__container__creators__text__role">記者：</span>
