@@ -17,7 +17,7 @@ const LineChartA = (props) =>{
   };
 
     return(
-      <div className="line001">
+      <div className="line001 intro5">
         <div className="linechart section">
           <div className="linechart__container">
               <div className="linechart__header">
