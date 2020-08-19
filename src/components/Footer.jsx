@@ -34,7 +34,7 @@ const Footer = () => {
           </p>
           <p className="footer__container__creators__text">
             <span className="footer__container__creators__text__role">記者：</span>
-            <span className="footer__container__creators__text__name">Hans、符雨欣</span>
+            <span className="footer__container__creators__text__name">謝梓楓</span>
           </p>
           <p className="footer__container__creators__text">
             <span className="footer__container__creators__text__role">設計：</span>
@@ -46,7 +46,7 @@ const Footer = () => {
           </p>
           <p className="footer__container__creators__text">
             <span className="footer__container__creators__text__role">監製：</span>
-            <span className="footer__container__creators__text__name">符雨欣、陳倩兒</span>
+            <span className="footer__container__creators__text__name">符雨欣</span>
           </p>
         </div>
         <div className="footer__container__creators__text">
