@@ -53,7 +53,7 @@ function DotA({ dataset }){
             left: 50
         }
 
-        const radius = 10;
+        const radius = 5;
 
         const svg = d3.select(svgRef.current);
 
