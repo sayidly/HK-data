@@ -26,8 +26,8 @@ a.close {
         color: $yellow;
         display: flex;
         &__title,  &__text{
-            font-size: 18px;
-            font-weight: 600;
+            font-size: 16px;
+            font-weight: 700;
             margin: 0;
             line-height: 30px;
         }
@@ -35,13 +35,14 @@ a.close {
             display: flex;
             margin-bottom: 20px;
             &__title, &__text{
-                font-size: 18px;
+                font-size: 16px;
+                font-weight: 700;
                 margin: 0;
                 line-height: 30px;
             }
             &__title{
                 width: 96px;
-                font-weight: 400;
+                font-weight: 700;
             }
             &__text{
                 padding-left: 12px;
