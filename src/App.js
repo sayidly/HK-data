@@ -34,7 +34,7 @@ const App = () => {
       <BarChart data={identity}/>
       <BarChart data={politics}/>
       <Text class="attitudes-brief" type="content" text={["整體而言有近6成市民支持運動，但兩極化情況明顯——非常支持及非常不支持的市民合共57.2%。若將數字按身份認同及政治立場劃分，可明顯看到支持陣營以香港人、本土派及泛民主派為主；而反對陣營則以混合身份、中國人及建制派為主。"]} />
-      <BarChart data={attitudes}/>
+      <BarChart labelsMode="gradient" data={attitudes}/>
       <Intro1 />
       <Intro2 />
       <Intro3 />

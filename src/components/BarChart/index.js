@@ -59,6 +59,42 @@ function BarChart (props) {
     </div>
   )
 
+  const firstLabel = curTag.labels[0]
+  const lastLabel = curTag.labels[[curTag.labels.length - 1]]
+  const firstLabelStyle = {
+    color: firstLabel.color
+  }
+  const lastLabelStyle = {
+    color: lastLabel.color
+  }
+
+  const gradientLabels = (
+    <div className="gradient-lables">
+      <span className="label-text" style={firstLabelStyle}>{firstLabel.name}</span>
+      <div className="colors">
+        {curTag.labels.map((label, index) => {
+          const itemStyle = {
+            display: 'inline-block',
+            verticalAlign: 'middle',
+            backgroundColor: label.color,
+            width: '18px',
+            height: '18px'
+          }
+          const style = {
+            verticalAlign: 'middle',
+            color: label.color
+          }
+          return (
+            <span className="lable" key={index}>
+              <span style={itemStyle}></span>
+            </span>
+          )
+        })}
+      </div>
+      <span className="label-text" style={lastLabelStyle}>{lastLabel.name}</span>
+    </div>
+  )
+
   const onStepEnter = ({ data }) => {
     setCurTagIndex(data);
   };
@@ -68,7 +104,11 @@ function BarChart (props) {
       <div className="bar-chart section">
         <h1 className="title">{props.data.title}</h1>
         {tags}
-        {labels}
+        {
+          props.labelsMode === 'gradient'
+          ? gradientLabels
+          : labels
+        }
         <Chart curTag={curTag}/>
       </div>
       <div className="description">
