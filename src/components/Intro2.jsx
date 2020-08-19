@@ -9,7 +9,8 @@ import BarChart from './BarChart';
 
 import {
   burn1,
-  burn2
+  burn2,
+  burn3
 } from '../libs/barChartData.json'
 
 const Intro2 = () => {
@@ -33,6 +34,7 @@ const Intro2 = () => {
       <Paragraph class="intro2" introContent={introContent}/>
       <BarChart class="intro2" data={burn1} />
       <BarChart class="intro2" data={burn2}/>
+      <BarChart class="intro2" data={burn3}/>
     </>
   )
 }
