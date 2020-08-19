@@ -161,8 +161,8 @@
 
 .description {
   @include media(">phone", "<=tablet") {
-    // display: grid;
-    // justify-items: center;
+    display: grid;
+    justify-items: center;
   }
 }
 
