@@ -37,6 +37,10 @@
     position: relative;
     flex: 1;
     margin-bottom: 10px;
+    @include media(">phone", "<=tablet") {
+      margin-bottom: 0;
+      margin-top: 40px;
+    }
     .item-title {
       font-size: 18px;
       font-weight: bold;
@@ -47,7 +51,12 @@
       right: calc(100% + 20px);
       width: 200px;
       @include media(">phone", "<=tablet") {
-        right: calc(100% + 5px);
+        font-size: 14px;
+        top: -24px;
+        transform: none;
+        right: 0;
+        left: 0;
+        text-align: left;
       }
     }
   }
@@ -140,9 +149,19 @@
   width: 15%;
   padding: 1.2rem 0.5rem;
   line-height: 1.6;
-  z-index: 1000;
+  z-index: 9999;
   @include media(">phone", "<=tablet") {
     width: 80%;
+  }
+}
+
+.description {
+  margin-left: 0.8rem;
+  overflow: auto;
+  z-index: 1000;
+  @include media(">phone", "<=tablet") {
+    display: grid;
+    justify-items: center;
   }
 }
 
