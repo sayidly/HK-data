@@ -29,6 +29,7 @@ import Intro1 from './components/Intro1';
 import Intro2 from './components/Intro2';
 import Intro3 from './components/Intro3';
 import Intro4 from './components/Intro4';
+import Intro5 from './components/Intro5';
 
 const App = () => {
 
@@ -45,6 +46,7 @@ const App = () => {
       <Intro2 />
       <Intro3 />
       <Intro4 />
+      <Intro5 />
       <DotChartA data={democraticAttr1}/>
       <DotChartA data={democraticAttr2}/>
       <DotChartA data={democraticAttr3}/>
