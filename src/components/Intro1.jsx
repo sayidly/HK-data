@@ -6,11 +6,19 @@ import './Intro.scss';
 import Paragraph from './Paragraph';
 import Questions from './Questions';
 import BarChart from './BarChart';
+import DotChartA from './DotChartA';
 
 import {
   independence1,
   independence2
 } from '../libs/barChartData.json'
+
+import {
+  democraticAttr1,
+  democraticAttr2,
+  democraticAttr3,
+  democraticAttr4,
+} from '../libs/dotChartData.json'
 
 const Intro1 = () => {
 
@@ -34,6 +42,10 @@ const Intro1 = () => {
       <Paragraph class="intro1" introContent={introContent} />
       <BarChart class="intro1" data={independence1} />
       <BarChart class="intro1" data={independence2}/>
+      <DotChartA data={democraticAttr1}/>
+      <DotChartA data={democraticAttr2}/>
+      <DotChartA data={democraticAttr3}/>
+      <DotChartA data={democraticAttr4}/>
     </>
   )
 }

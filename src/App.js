@@ -14,15 +14,7 @@ import {
   independence1,
   independence2
 } from './libs/barChartData.json'
-import {
-  democraticAttr1,
-  democraticAttr2,
-  democraticAttr3,
-  democraticAttr4,
-} from './libs/dotChartData.json'
-import {
-  lineData
-} from './libs/lineChartData.json'
+
 import Footer from './components/Footer';
 // import TestHook from './components/TestHook';
 import Intro1 from './components/Intro1';
@@ -47,11 +39,6 @@ const App = () => {
       <Intro3 />
       <Intro4 />
       <Intro5 />
-      <DotChartA data={democraticAttr1}/>
-      <DotChartA data={democraticAttr2}/>
-      <DotChartA data={democraticAttr3}/>
-      <DotChartA data={democraticAttr4}/>
-      <LineChartA data={lineData}/>
       <Text class="conclusion" type="content" text={["香港對中國的重要性與攬炒、攬炒與港獨之間均存在正關係。香港對中國有不可取替的重要性，是攬炒論的重要前設；而攬炒——可謂最激進的抗爭手段，與港獨——具顛覆性的政治目標，這二者之間，亦關係緊密。", <br/>, <br/>, "這次民調結果顯示，支持攬炒的市民傾向認同港獨並不只有壞處，而且捍衛探討港獨的自由。誠然，這並不代表市民實際上支持港獨，但這結果或已反映了，香港社會的民主抗爭運動，從手段到目標都有「激進化」的跡象。"]} />
       <Footer />
     </div>

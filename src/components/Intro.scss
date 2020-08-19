@@ -1,14 +1,20 @@
 .intro1 {
   background-color: #ddd5ac;
-  color: #1e663b;
+  color : #1e663b;
   strong {
     background-image: linear-gradient(120deg, #ef9b7d 0%, #ef9b7d 100%);
   }
-  .title:before, .tag.active {
+  .title:before, .tag.active, .dotchart__header__title:before {
     background-color: #1e663b;
+  }
+  .dotchart__header__title{
+    color : #1e663b;
   }
   .tag {
     background-color: #E6E6E6;
+  }
+  .text-block {
+    color: black;
   }
 }
 
