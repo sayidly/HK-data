@@ -15,15 +15,23 @@ const LineChartA = (props) =>{
     setCurrentStepIndex(data);
     setLineData(lineDataGroup[data].data)
   };
-
+  const titleTexts = [
+    {text: <h1 className="linechart__header__title"><strong>工作的穩定性</strong>影響港人對「攬炒」的態度嗎？</h1>},
+    {text: <h1 className="linechart__header__title"><strong>對經濟的預期</strong>影響港人對「攬炒」的態度嗎？</h1>},
+    {text: <h1 className="linechart__header__title"><strong>「香港對中國的重要性」</strong>影響港人對「攬炒」的態度嗎？</h1>},
+    {text: <h1 className="linechart__header__title">港人對「攬炒」的態度和他們<strong>對港獨的想法</strong>有關嗎？</h1>},
+    {text: <h1 className="linechart__header__title">港人對「攬炒」的態度和他們<strong>對港獨的想法</strong>有關嗎？</h1>}
+  ]
+  
     return(
       <div className="line001 intro5">
         <div className="linechart section">
           <div className="linechart__container">
               <div className="linechart__header">
-                  <h1 className="linechart__header__title">
-                    {props.data.tags[currentStepIndex].title}
-                  </h1>
+                  {/* <h1 className="linechart__header__title"> */}
+                    {/* {props.data.tags[currentStepIndex].title} */}
+                  {/* </h1> */}
+                  {titleTexts[currentStepIndex].text}
               </div>
               <LineA data={lineData}/>
             </div>
