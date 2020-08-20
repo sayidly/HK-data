@@ -12,7 +12,6 @@ const DotChartA = (props) =>{
     const [dotData, setDotData] = useState(props.data.tags[0])
     const [curTagIndex, setCurTagIndex] = useState(0);
 
-
     function TabButton(props){
       // console.log(props)
       return(

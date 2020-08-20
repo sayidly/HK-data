@@ -7,12 +7,16 @@ function LineA({ data }){
     const wrapperRef = React.createRef();
     const [wrapperWidth, setWrapperWidth] = useState(0) 
     const [wrapperHeight, setWrapperHeight] = useState(0)
-    window.addEventListener("resize", resized);
-
+    
     function resized(){
+        if (wrapperRef.current === null){return;}
+        else{
         setWrapperWidth(wrapperRef.current.offsetWidth)
         setWrapperHeight(wrapperRef.current.offsetHeight)
+       }
     }
+     
+    window.addEventListener("resize", resized);
 
     function drawLineChart(w, h){
         const margin = {
@@ -120,12 +124,7 @@ function LineA({ data }){
         resized();
         drawLineChart(wrapperWidth, wrapperHeight); 
                      
-    }, [data])
-
-    useEffect(() => {
-        drawLineChart(wrapperWidth, wrapperHeight);                 
-    }, [wrapperWidth, wrapperHeight])
-
+    }, [data, wrapperWidth, wrapperHeight])
 
 
     return(

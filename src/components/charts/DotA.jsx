@@ -9,12 +9,16 @@ function DotA({ dataset }){
     const legendRef = React.createRef();
     const [wrapperWidth, setWrapperWidth] = useState(0) 
     const [wrapperHeight, setWrapperHeight] = useState(0)
-    window.addEventListener("resize", resized);
 
     function resized(){
+        if (wrapperRef.current === null){return;}
+        else{
         setWrapperWidth(wrapperRef.current.offsetWidth)
         setWrapperHeight(wrapperRef.current.offsetHeight)
+     }
     }
+     
+    window.addEventListener("resize", resized);
 
     function drawDotChart(w, h){
         const colorScale = d3.scaleOrdinal()
@@ -166,11 +170,8 @@ function DotA({ dataset }){
         resized();
         drawDotChart(wrapperWidth, wrapperHeight); 
                      
-    }, [dataset])
+    }, [dataset, wrapperWidth, wrapperHeight])
 
-    useEffect(() => {
-        drawDotChart(wrapperWidth, wrapperHeight);                 
-    }, [wrapperWidth, wrapperHeight])
 
 
 
