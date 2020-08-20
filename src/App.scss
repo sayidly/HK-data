@@ -57,7 +57,7 @@ strong {
   @include media(">phone", "<=tablet") {
     width: 48px;
     height: 48px;
-    left: 80%;
+    left: 20px;
     top: 20px;
   }
 }
