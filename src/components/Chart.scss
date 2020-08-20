@@ -146,6 +146,7 @@
     line-height: 1.6;
     border: 2px solid black;
     font-size: 16px;
+    position: relative;
     z-index: 1000;
 
     @include media(">=phone", "<=tablet") {
