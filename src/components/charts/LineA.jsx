@@ -9,11 +9,14 @@ function LineA({ data }){
     const [wrapperHeight, setWrapperHeight] = useState(0)
     
     function resized(){
+        let newW, newH;
         if (wrapperRef.current === null){return;}
         else{
-        setWrapperWidth(wrapperRef.current.offsetWidth)
-        setWrapperHeight(wrapperRef.current.offsetHeight)
+        newW = wrapperRef.current.offsetWidth;
+        newH = wrapperRef.current.offsetHeight;
        }
+       setWrapperWidth(newW);
+       setWrapperHeight(newH);
     }
      
     window.addEventListener("resize", resized);
