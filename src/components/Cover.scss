@@ -16,23 +16,23 @@
     padding-top: 60px;
   }
 
-  // @media only screen
-  // and (device-width : 375px)
-  // and (device-height : 812px)
-  // and (-webkit-device-pixel-ratio : 3) {
-  //   height: 100vh;
-  //   padding: 0 20px;
-  //   padding-top: 60px;
-  // }
+  @media only screen
+  and (device-width : 375px)
+  and (device-height : 812px)
+  and (-webkit-device-pixel-ratio : 3) {
+    height: 116vh;
+    padding: 0 20px;
+    padding-top: 60px;
+  }
 
-  // @media only screen
-  // and (device-width : 375px)
-  // and (device-height : 667px)
-  // and (-webkit-device-pixel-ratio : 2) {
-  //   height: 130vh;
-  //   padding: 0 20px;
-  //   padding-top: 60px;
-  // }
+  @media only screen
+  and (device-width : 375px)
+  and (device-height : 667px)
+  and (-webkit-device-pixel-ratio : 2) {
+    height: 130vh;
+    padding: 0 20px;
+    padding-top: 60px;
+  }
 
   &__text {
     width: 60%;
