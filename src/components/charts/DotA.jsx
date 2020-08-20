@@ -1,18 +1,22 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import * as d3 from "d3";
-import useResizeObserver from "./useResizeObserver";
 
 function DotA({ dataset }){
     // console.log(dataset)
     const data = dataset.data;
     const svgRef = React.createRef();
     const wrapperRef = React.createRef();
-    const dimensions = useResizeObserver(wrapperRef);
     const legendRef = React.createRef();
+    const [wrapperWidth, setWrapperWidth] = useState(0) 
+    const [wrapperHeight, setWrapperHeight] = useState(0)
+    window.addEventListener("resize", resized);
 
-    // will be called initially, on data change and when dimensions change
-    useEffect(() => {
-        
+    function resized(){
+        setWrapperWidth(wrapperRef.current.offsetWidth)
+        setWrapperHeight(wrapperRef.current.offsetHeight)
+    }
+
+    function drawDotChart(w, h){
         const colorScale = d3.scaleOrdinal()
             .domain(data.map(d => d["民主意涵"]))
             .range(["#1E663B",  "#546D16", "#C45E31", "#C64530"]);
@@ -46,6 +50,11 @@ function DotA({ dataset }){
             
         }
 
+        const svg = d3.select(svgRef.current);
+
+        svg.selectAll("g").remove();
+                        
+
         const margin = {
             top: 30,
             right: 20,
@@ -54,18 +63,11 @@ function DotA({ dataset }){
         }
 
         const radius = 5;
-
-        const svg = d3.select(svgRef.current);
-
-        svg.selectAll("g").remove();
-                        
         const g = svg.append("g")
-                    .attr("transform", `translate(${margin.left}, ${margin.top})`);
+                    .attr("transform", `translate(${margin.left}, ${margin.top})`)
 
-        if (!dimensions) return;
-        
-        const  width = dimensions.width,
-               height = dimensions.height * 0.98 - legendWrapperHeight;
+        const  width = w,
+               height = h * 0.98 - legendWrapperHeight;
 
         svg.attr("height", height)
             .attr("width", width);
@@ -128,6 +130,20 @@ function DotA({ dataset }){
             
         }
 
+        const handleMouseClick = (datum) => {
+            let description = `<span>${datum["民主意涵"]}  ${formatPercent(datum.number)}</span></br>`
+            const currentX = xScale(datum["身份"]);
+            const currentY = yScale(datum.number);
+                
+            toolTip
+                .style("opacity", 1)
+                .style("background-color", "black")
+                .html(description)
+                .style("left", `${currentX}px`)
+                .style("top", `${currentY - 5}px`);           
+            
+        }
+
         const dot = g.selectAll(".dot").data(data);
         dot.enter()
             .append("circle")
@@ -139,12 +155,24 @@ function DotA({ dataset }){
             .attr("fill", d => colorScale(d["民主意涵"]))
             .attr("r", radius)
             .on("mouseover", handleMouseOver)
+            .on("click", handleMouseClick)
             .on("mouseout", handleMouseOut)    
             
         dot.exit()
         .remove();
-                    
-    }, [dataset, dimensions])
+    }
+
+    useEffect(() => {
+        resized();
+        drawDotChart(wrapperWidth, wrapperHeight); 
+                     
+    }, [dataset])
+
+    useEffect(() => {
+        drawDotChart(wrapperWidth, wrapperHeight);                 
+    }, [wrapperWidth, wrapperHeight])
+
+
 
     return(
         <div className="wrapper dot-wrapper" ref={wrapperRef} >

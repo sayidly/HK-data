@@ -1,15 +1,20 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import * as d3 from "d3";
-import useResizeObserver from "./useResizeObserver";
 
 function LineA({ data }){
 
     const svgRef = React.createRef();
     const wrapperRef = React.createRef();
-    const dimensions = useResizeObserver(wrapperRef);
+    const [wrapperWidth, setWrapperWidth] = useState(0) 
+    const [wrapperHeight, setWrapperHeight] = useState(0)
+    window.addEventListener("resize", resized);
 
-    // will be called initially, on data change and when dimensions change
-    useEffect(() => {
+    function resized(){
+        setWrapperWidth(wrapperRef.current.offsetWidth)
+        setWrapperHeight(wrapperRef.current.offsetHeight)
+    }
+
+    function drawLineChart(w, h){
         const margin = {
             top: 30,
             right: 20,
@@ -23,11 +28,9 @@ function LineA({ data }){
                         
         const g = svg.append("g")
                     .attr("transform", `translate(${margin.left}, ${margin.top})`);
-
-        if (!dimensions) return;
         
-        const  width = dimensions.width,
-               height = dimensions.height * 0.98;
+        const  width = w,
+               height = h * 0.98;
 
         svg.attr("height", height)
             .attr("width", width);
@@ -111,8 +114,19 @@ function LineA({ data }){
         }
         }
         
+    }
+    // will be called initially, on data change and when dimensions change
+    useEffect(() => {
+        resized();
+        drawLineChart(wrapperWidth, wrapperHeight); 
+                     
+    }, [data])
 
-    }, [data, dimensions])
+    useEffect(() => {
+        drawLineChart(wrapperWidth, wrapperHeight);                 
+    }, [wrapperWidth, wrapperHeight])
+
+
 
     return(
         <div className="wrapper line-wrapper" ref={wrapperRef} >
