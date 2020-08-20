@@ -2,7 +2,7 @@
 
 #chartA .text-label {
 
-  @include media(">phone", "<=tablet") {
+  @include media(">=phone", "<=tablet") {
     font-size: 36px !important;
 
     &:nth-child(7) {

@@ -84,7 +84,7 @@ footer#footer .footer__join a:hover{
         &__creators{
             width: 30%;
             margin-bottom: 20px;
-            @include media(">phone", "<=tablet") {
+            @include media(">=phone", "<=tablet") {
               width: 80%;
             }
             &__text{

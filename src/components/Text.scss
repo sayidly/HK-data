@@ -16,7 +16,7 @@
     letter-spacing: 0.16em;
     width: 70%;
     text-align: justify;
-    @include media(">phone", "<=tablet") {
+    @include media(">=phone", "<=tablet") {
       font-size: 20px;
       width: 100%;
     }
@@ -26,7 +26,7 @@
     line-height: 1.6;
     font-weight: 700;
     letter-spacing: 0.1em;
-    @include media(">phone", "<=tablet") {
+    @include media(">=phone", "<=tablet") {
       font-size: 16px;
       width: 80%;
     }
@@ -36,7 +36,7 @@
     line-height: 1.6;
     margin: 0 auto;
     letter-spacing: 0.1em;
-    @include media(">phone", "<=tablet") {
+    @include media(">=phone", "<=tablet") {
       font-size: 16px;
       width: 80%;
     }

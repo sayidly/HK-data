@@ -31,7 +31,7 @@
                 margin-right: 10px;
                 color: #9A9A9A;
                 cursor: pointer;
-                @include media(">phone", "<=tablet") {
+                @include media(">=phone", "<=tablet") {
                   font-size: 16px;
                   line-height: 28px;
                   margin-bottom: 10px;
@@ -57,7 +57,7 @@
                     border-radius: 50%;
                     background-color: black;
                   }
-                  @include media(">phone", "<=tablet") {
+                  @include media(">=phone", "<=tablet") {
                     font-size: 1.2em;
                   }
             }
@@ -78,14 +78,14 @@
         border-radius: 50%;
         background-color: black;
 
-        @include media(">phone", "<=tablet") {
+        @include media(">=phone", "<=tablet") {
           left: -30px;
           width: 20px;
           height: 20px;
         }
       }
 
-      @include media(">phone", "<=tablet") {
+      @include media(">=phone", "<=tablet") {
         font-size: 1.2em;
       }
     }
@@ -148,7 +148,7 @@
     font-size: 16px;
     z-index: 1000;
 
-    @include media(">phone", "<=tablet") {
+    @include media(">=phone", "<=tablet") {
       width: 80%;
     }
   }
@@ -166,7 +166,7 @@
     overflow: auto;
     z-index: 1000;
 
-    @include media(">phone", "<=tablet") {
+    @include media(">=phone", "<=tablet") {
       display: grid;
       justify-items: center;
     }

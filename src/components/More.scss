@@ -11,7 +11,7 @@
     margin: 0 auto;
     padding-bottom: 100px;
     max-width: 800px;
-    @include media(">phone", "<=tablet") {
+    @include media(">=phone", "<=tablet") {
       padding: 25px;
     }
   }

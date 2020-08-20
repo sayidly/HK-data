@@ -22,7 +22,7 @@
   height: 100vh;
   position: relative;
   box-sizing: border-box;
-  @include media(">phone", "<=tablet") {
+  @include media(">=phone", "<=tablet") {
     padding: 10px;
     max-width: 85%;
   }
@@ -54,7 +54,7 @@ strong {
     width: 100%;
     pointer-events: none;
   }
-  @include media(">phone", "<=tablet") {
+  @include media(">=phone", "<=tablet") {
     width: 48px;
     height: 48px;
     left: 20px;
