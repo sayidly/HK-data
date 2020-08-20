@@ -24,7 +24,7 @@ const Modal = (props) => {
         </div>
         <div class="modal__content">
           <h5 class="modal__content__title display_contents">調查機構：</h5>
-          <p class="modal__content__text display_contents">香港中文大學傳播與民意調查中心（電話調查受政策創新與統籌辦事處的公共政策研究資助計劃資助）</p>
+          <p class="modal__content__text display_contents">香港中文大學傳播與民意調查中心<span class="modal__desc">（電話調查受政策創新與統籌辦事處的公共政策研究資助計劃資助）</span></p>
         </div>
         <div class="modal__content">
           <h5 class="modal__content__title">調查人數：</h5>
