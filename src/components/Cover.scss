@@ -34,6 +34,15 @@
     padding-top: 60px;
   }
 
+  @media only screen
+  and (device-width : 320px)
+  and (device-height : 568px)
+  and (-webkit-device-pixel-ratio : 2) {
+    height: 180vh;
+    padding: 0 20px;
+    padding-top: 60px;
+  }
+
   &__text {
     width: 60%;
     max-width: 800px;
