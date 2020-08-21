@@ -77,7 +77,7 @@ $border-radius-large: 5rem;
 // Navigation
 .navigation {
   // Hidden Checkbox
-  z-index: 9999;
+  z-index: 98;
   position: absolute;
 
 	&__checkbox {
@@ -86,6 +86,7 @@ $border-radius-large: 5rem;
 		// Navigation Functionality
 		&:checked ~ .navigation__background {
       // transform: scale(100);
+      display: block;
       transition: opacity 0.3s;
       opacity: 1;
 		}
@@ -125,6 +126,7 @@ $border-radius-large: 5rem;
 		// right: 2rem;
 		width: 100vw;
     height: 100vh;
+    display: none;
     top: 0;
     left: 50%;
     transform: translateX(-50%);
@@ -179,13 +181,16 @@ $border-radius-large: 5rem;
 		// Automatic Counter
 		&::before {
 			content: '0' counters(list, '');
-			padding-right: 1.2rem;
+      padding-right: 1.2rem;
+      @include media(">=phone", "<=tablet") {
+        padding-right: .6rem;
+      }
 		}
 
 		&:link,
 		&:visited {
 			display: inline-block;
-			font-size: 2rem;
+			font-size: 1.6rem;
 			font-weight: 700;
 			padding: 1rem 2rem;
 			color: $color-black;
@@ -201,7 +206,8 @@ $border-radius-large: 5rem;
 
       transition: all 0.4s;
       @include media(">=phone", "<=tablet") {
-        font-size: 1.5rem;
+        font-size: 1rem;
+        padding: .5rem 1rem;
       }
 		}
 

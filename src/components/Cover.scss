@@ -136,6 +136,7 @@
     &__info_icon {
       width: 64px;
       cursor: pointer;
+      z-index: 99;
 
       @include media(">=phone", "<=tablet") {
         margin-bottom: 20px;

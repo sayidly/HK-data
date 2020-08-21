@@ -41,19 +41,19 @@ const Menu = () => {
       <nav className="navigation__nav">
         <ul className="navigation__list">
           <li className="navigation__item">
-            <a href="#cover" className="navigation__link">序</a>
+            <a href="#cover" className="navigation__link">群眾輪廓</a>
           </li>
           <li className="navigation__item">
-            <a href="#intro1" className="navigation__link">對經濟的預期</a>
+            <a href="#intro1" className="navigation__link">民主是什麼？港獨可行嗎？</a>
           </li>
           <li className="navigation__item">
-            <a href="#intro2" className="navigation__link">政治面向的價值觀</a>
+            <a href="#intro2" className="navigation__link">攬炒越嚴峻，對香港更好？</a>
           </li>
           <li className="navigation__item">
-            <a href="#intro3" className="navigation__link">香港對中國的重要性</a>
+            <a href="#intro3" className="navigation__link">香港對中國有多重要？</a>
           </li>
           <li className="navigation__item">
-            <a href="#intro4" className="navigation__link">對「攬炒」的評估</a>
+            <a href="#intro4" className="navigation__link">對經濟未來會否悲觀？想移民嗎？</a>
           </li>
         </ul>
       </nav>
