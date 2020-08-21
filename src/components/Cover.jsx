@@ -23,7 +23,7 @@ const Cover = () => {
 
   return (
     <>
-      <div className="cover">
+      <div className="cover" id="cover">
         <a className="logo" href="https://theinitium.com/" target="_blank"><img src={logo} alt="Initium Logo"/></a>
         <img src={bgImage} className="cover__bg" alt="bg"/>
         <div className="cover__text">

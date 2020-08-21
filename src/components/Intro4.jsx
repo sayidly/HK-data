@@ -31,14 +31,14 @@ const Intro4 = () => {
   ]}
 
   return (
-    <>
-      <Questions class="intro4" questionList={questionList} bgImage={bgImage} />
-      <Paragraph class="intro4" introContent={introContent} />
-      <BarChart class="intro4" data={econ1} />
-      <BarChart class="intro4" data={econ2} />
-      <BarChart class="intro4" labelsMode="gradient" data={econ3} />
-      <BarChart class="intro4" data={econ4} />
-    </>
+    <div className="intro4" id="intro4">
+      <Questions questionList={questionList} bgImage={bgImage} />
+      <Paragraph introContent={introContent} />
+      <BarChart data={econ1} />
+      <BarChart data={econ2} />
+      <BarChart labelsMode="gradient" data={econ3} />
+      <BarChart data={econ4} />
+    </div>
   )
 }
 

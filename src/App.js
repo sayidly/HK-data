@@ -23,18 +23,20 @@ import Intro3 from './components/Intro3';
 import Intro4 from './components/Intro4';
 import Intro5 from './components/Intro5';
 import More from './components/More';
+import Menu from './components/Menu';
 
 const App = () => {
 
   return (
     <div className="App">
       {/* <TestHook /> */}
+      <Menu />
       <Cover />
       <Text class="identity-brief" type="content" text={["就政治光譜而言，自視「本土派」的支持者達19.8%，若按年齡劃分，在年輕人中本土派已成主流，亦有近四分之一的中年市民自視本土派。至於身份認同，認同為「香港人」的市民達到56.7%，在各個年齡層都是最顯著的選項。"]} />
-      <BarChart data={identity}/>
-      <BarChart data={politics}/>
+      <BarChart class="identity" data={identity}/>
+      <BarChart class="politics" data={politics}/>
       <Text class="attitudes-brief" type="content" text={["整體而言有近6成市民支持運動，但兩極化情況明顯——非常支持及非常不支持的市民合共57.2%。若將數字按身份認同及政治立場劃分，可明顯看到支持陣營以香港人、本土派及泛民主派為主；而反對陣營則以混合身份、中國人及建制派為主。"]} />
-      <BarChart labelsMode="gradient" data={attitudes}/>
+      <BarChart class="attitudes" labelsMode="gradient" data={attitudes}/>
       <Intro1 />
       <Intro2 />
       <Intro3 />

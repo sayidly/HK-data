@@ -1,0 +1,300 @@
+@import '../Styles/include-media';
+
+// Variables
+$color-primary: #ffb600;
+$color-primary-light: #e0e0e0;
+$color-primary-dark: #dddddd;
+
+$color-white: #fff;
+$color-grey-light-1: #f7f7f7;
+$color-grey-light-2: #eee;
+$color-grey-dark-1: #999;
+$color-grey-dark-2: #295984;
+$color-grey-dark-3: #333;
+$color-black: #000;
+
+// Font Sizes
+$font-size-default: 1.6rem;
+
+// Border Radius
+$border-radius-small: 0.2rem;
+$border-radius-medium: 0.3rem;
+$border-radius-large: 5rem;
+
+// Mixins
+@mixin absolute-center {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-55%, -50%);
+}
+
+@mixin gradient($color-1, $color-2) {
+	background-image: linear-gradient(to right bottom, $color-1, $color-2);
+}
+
+// Header Animations
+@keyframes moveInLeft {
+	0% {
+		opacity: 0;
+		transform: translateX(-10rem);
+	}
+	80% {
+		transform: translateX(1rem);
+	}
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+@keyframes moveInRight {
+	0% {
+		opacity: 0;
+		transform: translateX(10rem);
+	}
+	80% {
+		transform: translateX(-1rem);
+	}
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+@keyframes moveInBottom {
+	from {
+		opacity: 0;
+		transform: translateY(3rem);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+
+// Navigation
+.navigation {
+  // Hidden Checkbox
+  z-index: 9999;
+  position: absolute;
+
+	&__checkbox {
+		display: none;
+
+		// Navigation Functionality
+		&:checked ~ .navigation__background {
+      // transform: scale(100);
+      transition: opacity 0.3s;
+      opacity: 1;
+		}
+
+		&:checked ~ .navigation__nav {
+			// transform: translateX(0);
+			visibility: initial;
+			opacity: 1;
+		}
+	}
+
+	// Input Label -> Styled as a Button
+	&__button {
+		position: fixed;
+		top: 2rem;
+		right: 2rem;
+		width: 4rem;
+		height: 4rem;
+		border-radius: 50%;
+		// background-color: $color-white;
+		// box-shadow: 0 1rem 3rem rgba($color-black, 0.2);
+		cursor: pointer;
+		z-index: 12;
+
+		// Center the Icon
+    text-align: center;
+    @include media(">=phone", "<=tablet") {
+      top: 1rem;
+      right: 1rem;
+    }
+	}
+
+	// Background Image / Gradient -> Hidden Behind a Label
+	&__background {
+		position: fixed;
+		// top: 2rem;
+		// right: 2rem;
+		width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+		// border-radius: 50%;
+		background-image: radial-gradient(
+			$color-primary-light,
+			$color-primary-dark
+    );
+    opacity: 0;
+		z-index: 10;
+
+    // transition: transform 0.8s cubic-bezier(0.86, 0, 0.07, 1);
+    transition: opacity 0.8s ease-in,
+			transform 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+	}
+
+	// Menu Container
+	&__nav {
+		position: fixed;
+		top: 0;
+		left: 50%;
+		height: 100vh;
+		width: 100%;
+		z-index: 11;
+
+		transform: translateX(-50%);
+		visibility: hidden;
+		opacity: 0;
+
+		transition: opacity 0.8s ease-in,
+			transform 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+	}
+
+	// Unordered List
+	&__list {
+		@include absolute-center;
+		text-align: center;
+    list-style: none;
+    @include media(">=phone", "<=tablet") {
+      width: 100%;
+    }
+	}
+
+	// List Items with Automatic Counter
+	&__item {
+		margin: 1rem;
+		counter-increment: list;
+	}
+
+	// Item Links
+	&__link {
+		// Automatic Counter
+		&::before {
+			content: '0' counters(list, '');
+			padding-right: 1.2rem;
+		}
+
+		&:link,
+		&:visited {
+			display: inline-block;
+			font-size: 2rem;
+			font-weight: 700;
+			padding: 1rem 2rem;
+			color: $color-black;
+			text-decoration: none;
+			text-transform: uppercase;
+			background-image: linear-gradient(
+				120deg,
+				transparent 0%,
+				transparent 49.9%,
+				$color-white 50%
+			);
+			background-size: 227%;
+
+      transition: all 0.4s;
+      @include media(">=phone", "<=tablet") {
+        font-size: 1.5rem;
+      }
+		}
+
+		&:hover,
+		&:active {
+			color: $color-primary;
+			background-position: 100%;
+			transform: translateX(1rem);
+		}
+	}
+
+// Icon Design
+	&__icon {
+		display: inline-block;
+		position: relative;
+		width: 2rem;
+		height: 0.5rem;
+		top: 37%;
+
+		transition: transform 0.25s ease-in-out;
+
+		&-span {
+			position: absolute;
+			height: 0.2rem;
+			width: 50%;
+			background: $color-grey-dark-2;
+
+			transition: all 0.5s ease-in;
+
+			&:nth-child(even) {
+				left: 50%;
+				border-radius: 0 0.9rem 0.9rem 0;
+			}
+			&:nth-child(odd) {
+				left: 0;
+				border-radius: 0.9rem 0 0 0.9rem;
+			}
+
+			&:nth-child(1),
+			&:nth-child(2) {
+				transform: translateY(-.6rem);
+			}
+			&:nth-child(5),
+			&:nth-child(6) {
+				transform: translateY(.6rem);
+			}
+		}
+	}
+
+	&__checkbox:checked + &__button &__icon-span {
+		&:nth-child(1),
+		&:nth-child(6) {
+			transform: rotate(45deg);
+		}
+		&:nth-child(2),
+		&:nth-child(5) {
+			transform: rotate(-45deg);
+		}
+	}
+
+	&__checkbox:checked + &__button &__icon-span {
+		&:nth-child(2),
+		&:nth-child(6) {
+			transform-origin: left;
+		}
+		&:nth-child(1),
+		&:nth-child(5) {
+			transform-origin: right;
+		}
+	}
+
+	&__checkbox:checked + &__button &__icon-span {
+		&:nth-child(3) {
+			left: -50%;
+			opacity: 0;
+		}
+		&:nth-child(4) {
+			left: 100%;
+			opacity: 0;
+		}
+	}
+
+	&__button:hover &__icon-span {
+		&:nth-child(3) {
+			transform: translateX(-0.2rem) scale(1.1);
+		}
+		&:nth-child(4) {
+			transform: translateX(0.2rem) scale(1.1);
+		}
+	}
+
+	&__checkbox:checked + &__button:hover &__icon {
+    transform: rotate(180deg) translateY(.2rem);
+    // transform: translateY(.1rem);
+	}
+}

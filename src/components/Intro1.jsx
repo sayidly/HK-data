@@ -39,18 +39,18 @@ const Intro1 = () => {
   ]}
 
   return (
-    <>
-      <Questions class="intro1" questionList={questionList} bgImage={bgImage} />
-      <Paragraph class="intro1" introContent={introContent} />
-      <BarChart class="intro1" labelsMode="gradient" data={independence1} />
-      <BarChart class="intro1" labelsMode="gradient" data={independence2}/>
-      <BarChart class="intro1" labelsMode="gradient" data={independence3}/>
-      <BarChart class="intro1" labelsMode="gradient" data={independence4}/>
+    <div className="intro1" id="intro1">
+      <Questions questionList={questionList} bgImage={bgImage} />
+      <Paragraph introContent={introContent} />
+      <BarChart labelsMode="gradient" data={independence1} />
+      <BarChart labelsMode="gradient" data={independence2}/>
+      <BarChart labelsMode="gradient" data={independence3}/>
+      <BarChart labelsMode="gradient" data={independence4}/>
       <DotChartA data={democraticAttr1}/>
       <DotChartA data={democraticAttr2}/>
       <DotChartA data={democraticAttr3}/>
       <DotChartA data={democraticAttr4}/>
-    </>
+    </div>
   )
 }
 

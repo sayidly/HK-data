@@ -30,13 +30,13 @@ const Intro3 = () => {
   ]}
 
   return (
-    <>
-      <Questions class="intro3" questionList={questionList} bgImage={bgImage}/>
-      <Paragraph class="intro3" introContent={introContent} />
-      <BarChart class="intro3" labelsMode="gradient" data={hkimportance1} />
-      <BarChart class="intro3" labelsMode="gradient" data={hkimportance2} />
-      <BarChart class="intro3" labelsMode="gradient" data={hkimportance3} />
-    </>
+    <div className="intro3" id="intro3">
+      <Questions questionList={questionList} bgImage={bgImage}/>
+      <Paragraph introContent={introContent} />
+      <BarChart labelsMode="gradient" data={hkimportance1} />
+      <BarChart labelsMode="gradient" data={hkimportance2} />
+      <BarChart labelsMode="gradient" data={hkimportance3} />
+    </div>
   )
 }
 
