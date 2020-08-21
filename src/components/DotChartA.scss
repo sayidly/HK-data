@@ -1,28 +1,29 @@
 @import '../styles/variables';
 
 .dotchart {
-    &__header {
-        flex-direction: column;
-        &__buttons{
-            // margin-top: 28px;
-            justify-content: flex-start;
-          }
-    }  
+  &__header {
+    flex-direction: column;
+
+    &__buttons {
+      // margin-top: 28px;
+      justify-content: flex-start;
+    }
+  }
 }
 
 .dot001 {
 
-    background-color: #DDD5AC;
+  background-color: #DDD5AC;
 
-    .legend .legend-circle {
-        border-radius: 50%;
-        width: 22px;
-        height: 22px;
-    }
+  .legend .legend-circle {
+    border-radius: 50%;
+    width: 22px;
+    height: 22px;
+  }
 
-    .text-block {
-        // height: 5rem;
-        border: none;
-      }
+  .text-block {
+    // height: 5rem;
+    border: none;
+  }
 
 }

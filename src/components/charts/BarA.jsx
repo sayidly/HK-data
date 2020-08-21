@@ -1,7 +1,9 @@
-import React, { useEffect } from "react";
+import React, {
+  useEffect
+} from "react";
 import * as d3 from "d3";
 
-function groupData (data, total) {
+function groupData(data, total) {
   const percent = d3.scaleLinear()
     .domain([0, total])
     .range([0, 100])
@@ -19,10 +21,15 @@ function groupData (data, total) {
   return _data
 }
 
-function stackedBar (bind, data, config) {
+function stackedBar(bind, data, config) {
   config = {
     f: d3.format('.1f'),
-    margin: {top: 20, right: 0, bottom: 20, left: 0},
+    margin: {
+      top: 20,
+      right: 0,
+      bottom: 20,
+      left: 0
+    },
     width: 800,
     height: 600,
     barHeight: 500,
@@ -30,7 +37,14 @@ function stackedBar (bind, data, config) {
     ...config
   }
 
-  const { f, margin, width, height, barHeight, color } = config
+  const {
+    f,
+    margin,
+    width,
+    height,
+    barHeight,
+    color
+  } = config
   const w = width - margin.left - margin.right
   const h = height - margin.top - margin.bottom
   const halfBarHeight = barHeight / 2
@@ -52,10 +66,10 @@ function stackedBar (bind, data, config) {
     .data(_data)
     .enter().append('rect')
     .attr('class', 'rect-stacked')
-    .attr('x', (d, i) => xScale(d.cumulative)*0.97 + i * 5)
+    .attr('x', (d, i) => xScale(d.cumulative) * 0.97 + i * 5)
     .attr('y', h / 2 - halfBarHeight)
     .attr('height', barHeight)
-    .attr('width', d => xScale(d.value)*0.97)
+    .attr('width', d => xScale(d.value) * 0.97)
     .style('fill', (d, i) => color[i])
 
   // Add one dot in the legend for each name.
@@ -63,11 +77,13 @@ function stackedBar (bind, data, config) {
   selection.selectAll("mydots")
     .data(_data)
     .enter().append("rect")
-      .attr("x", (d,i) => { return i*(size+80)})
-      .attr("y", - margin.top) // 100 is where the first dot appears. 25 is the distance between dots
-      .attr("width", size)
-      .attr("height", size)
-      .style("fill", (d, i) => color[i])
+    .attr("x", (d, i) => {
+      return i * (size + 80)
+    })
+    .attr("y", -margin.top) // 100 is where the first dot appears. 25 is the distance between dots
+    .attr("width", size)
+    .attr("height", size)
+    .style("fill", (d, i) => color[i])
 
   // Add one label in the legend for each name.
   selection.selectAll('.text-label')
@@ -77,8 +93,10 @@ function stackedBar (bind, data, config) {
     // .attr('text-anchor', 'middle')
     // .attr('x', d => xScale(d.cumulative) + (xScale(d.value) / 2))
     // .attr('y', (h / 2) + (halfBarHeight * 1.1) + 25)
-    .attr("x", (d,i) => { return size*1.5 + i*(size+80)})
-    .attr("y", size*.75- margin.top)
+    .attr("x", (d, i) => {
+      return size * 1.5 + i * (size + 80)
+    })
+    .attr("y", size * .75 - margin.top)
     .style('fill', (d, i) => color[i])
     .style('font-size', '14px')
     .text(d => d.label)
@@ -90,7 +108,7 @@ const Bar01 = (props) => {
     stackedBar('.graphic', props.data)
   })
 
-  return(
+  return (
     <div className="graphic"></div>
   )
 }

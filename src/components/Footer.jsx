@@ -1,28 +1,7 @@
-import React, { useRef, useEffect } from 'react';
+import React from 'react';
 import "./Footer.scss";
 
 const Footer = () => {
-
-  useEffect(() => {
-    // window.onload=function(){
-    //   var o=document.querySelectorAll(".footer__join");
-    //   window.onscroll=function(n){
-    //     window.innerHeight+window.scrollY>=document.body.offsetHeight?o[0].classList.add("active"):o[0].classList.remove("active")
-    //   }
-
-    //   var lastScrollTop = 0;
-    //   window.addEventListener("scroll", function(){
-    //     var st = window.pageYOffset || document.documentElement.scrollTop;
-    //     if (st > lastScrollTop){
-    //       o[0].classList.remove("active")
-    //     } else {
-    //       o[0].classList.add("active")
-    //     }
-    //     lastScrollTop = st <= 0 ? 0 : st;
-    //   }, false);
-    // }
-  })
-
 
   return (
     <footer className="footer" id="footer">

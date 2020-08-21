@@ -25,14 +25,14 @@ const Menu = () => {
     <div className="navigation">
       <input type="checkbox" id="navi-toggle" className="navigation__checkbox" />
 
-      <label for="navi-toggle" className="navigation__button">
+      <label htmlFor="navi-toggle" className="navigation__button">
         <span className="navigation__icon">
-            <span className="navigation__icon-span">&nbsp;</span>
-            <span className="navigation__icon-span">&nbsp;</span>
-            <span className="navigation__icon-span">&nbsp;</span>
-            <span className="navigation__icon-span">&nbsp;</span>
-            <span className="navigation__icon-span">&nbsp;</span>
-            <span className="navigation__icon-span">&nbsp;</span>
+          <span className="navigation__icon-span">&nbsp;</span>
+          <span className="navigation__icon-span">&nbsp;</span>
+          <span className="navigation__icon-span">&nbsp;</span>
+          <span className="navigation__icon-span">&nbsp;</span>
+          <span className="navigation__icon-span">&nbsp;</span>
+          <span className="navigation__icon-span">&nbsp;</span>
         </span>
       </label>
 

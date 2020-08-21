@@ -1,4 +1,4 @@
-import React, { useRef, createRef, useEffect } from 'react';
+import React from 'react';
 import './Cover.scss'
 import bgImage from '../images/cover.png';
 import logo from '../images/logo.svg';
@@ -18,8 +18,6 @@ const Cover = () => {
 
   const content = coverContent.content;
 
-  useEffect(() => {
-  });
 
   return (
     <>
