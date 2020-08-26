@@ -53,6 +53,11 @@ module.exports = {
       }
     ]
   },
+  stats: {
+    // One of the two if I remember right
+    entrypoints: false,
+    children: false
+  },
   resolve: {
     extensions: ["*", ".js", ".jsx"]
   },
